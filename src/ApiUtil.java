@@ -10,6 +10,7 @@ import java.net.ProtocolException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ApiUtil {
     private static String API = "&apiKey="+"3249e937bdde4f27bc283ab7219b1142";
@@ -66,6 +67,20 @@ public class ApiUtil {
             artPool.put(callAPI().getJSONArray("articles"));
         }
         return artPool;
+    }
+    public static ArrayList<HashMap> getData(JSONArray ja){
+        ArrayList<HashMap> temp = new ArrayList<>();
+
+        for(int i=0;i<ja.length();i++){
+            for(int j = 0;j<ja.getJSONArray(i).length();j++){
+                HashMap<String, String> data = new HashMap<>();
+                data.put("title", ja.getJSONArray(i).getJSONObject(j).getString("title"));
+                data.put("url", ja.getJSONArray(i).getJSONObject(j).getString("url"));
+                data.put("urlToImage", ja.getJSONArray(i).getJSONObject(j).get("urlToImage").toString());
+                temp.add(data);
+            }
+        }
+        return temp;
     }
     public static ArrayList<String> getArticleTitle(JSONArray ja){
         ArrayList<String> temp = new ArrayList<>();

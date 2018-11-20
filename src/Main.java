@@ -1,6 +1,7 @@
 import org.json.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -22,29 +23,44 @@ public class Main {
         select[0] = "business";
         select[1] = "science";
         JSONArray data = api.getSelectedArticles(select);
-        ArrayList<String> titles = api.getArticleTitle(data);
-        Application app = new Application(titles);
+//        ArrayList<String> titles = api.getArticleTitle(data);
+        ArrayList<HashMap> apiData = api.getData(data);
+        Application app = new Application(apiData);
         int act;
         Scanner sc = new Scanner(System.in);
 
         while(true){
             System.out.println("================================");
             System.out.println("| Save List                    |");
-            ArrayList<String> temp = app.saveList();
+
+            ArrayList<HashMap> temp = app.getSaveList();
             if(temp != null) {
                 for (int i = 0; i < temp.size(); i++) {
-                    System.out.println(temp.get(i));
+                    System.out.println(temp.get(i).get("title"));
                 }
             }
+            System.out.println("--------------------------------");
+            System.out.println("| Previous List                |");
+            ArrayList<HashMap> prevList = app.getPrev();
+
+                for (int i = 0; i < prevList.size(); i++) {
+                    System.out.println(prevList.get(i).get("title"));
+                }
+
             System.out.println("--------------------------------\n");
-            System.out.println("[1] Next\t[2] Read\t[3] Save");
+                System.out.println("Now: "+app.getNow());
+
+            System.out.println("[1] Previous\t[2] Save\t[3] Next");
             act = Integer.parseInt(sc.nextLine());
             if(act == 1){
-                System.out.println(app.next());
+                app.prev();
             }
             if(act == 2){
                 app.save();
 
+            }
+            if(act == 3){
+                app.next();
             }
 //            System.out.println("================================");
         }
