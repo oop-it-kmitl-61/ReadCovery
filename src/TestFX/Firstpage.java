@@ -44,8 +44,11 @@ public class Firstpage extends Application {
         save.setPrefSize(500/3, 10);
         next.setPrefSize(500/3, 10);
 
+
+//        String url = "http://placekitten.com/200/300";
+//
 //        ImageView view = new ImageView();
-//        Image img = new Image("file:OOP/src/TestFX/Screen_Shot_2017-11-06_at_7.23.57_PM_grande.png");
+//        Image img = new Image(url, true);
 //        view.setFitWidth(400);
 //        view.setFitHeight(400);
 //        view.setX(20);
