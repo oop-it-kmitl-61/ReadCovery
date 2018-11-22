@@ -13,7 +13,7 @@ public class ReadList extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ReadList.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("SaveList");
+        stage.setTitle("ReadList");
         stage.setScene(scene);
 
         stage.show();
