@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GuiController {
-    @FXML private JFXButton registBtn, backBtn;
+    @FXML private JFXButton registBtn, backBtn,toRegister;
     @FXML void registerHandler(ActionEvent event){
         registBtn.setText("wow");
     }
@@ -30,7 +30,10 @@ public class GuiController {
     }
     @FXML void backHandler(ActionEvent e)  {
         Stage stage = (Stage)backBtn.getScene().getWindow();
-        changeScene(stage, "loginjfoenix.fxml");
+        changeScene(stage, "Loginjfoenix.fxml");
+    }
+    @FXML void toRegisterHandle(ActionEvent e){
+        changeScene((Stage) toRegister.getScene().getWindow(), "Register.fxml");
     }
 
 }
