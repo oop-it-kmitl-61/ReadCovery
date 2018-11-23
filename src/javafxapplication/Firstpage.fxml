@@ -12,7 +12,7 @@
    <top>
       <HBox prefHeight="0.0">
          <children>
-            <JFXButton prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="ReadList" textAlignment="CENTER">
+            <JFXButton fx:id="readListBtn" onAction="#readList" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="ReadList" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -27,7 +27,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="SaveList" textAlignment="CENTER">
+            <JFXButton fx:id="saveListBtn" onAction="#saveList" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="SaveList" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
