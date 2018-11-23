@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.GuiController">
    <top>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <JFXButton prefHeight="34.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="ReadList">
+            <JFXButton fx:id="readListBtn" onAction="#readList" prefHeight="34.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="ReadList">
                <font>
                   <Font size="14.0" />
                </font>
@@ -47,7 +47,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton prefHeight="34.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Profile">
+            <JFXButton fx:id="toProfile" onAction="#toProfile" prefHeight="34.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Profile">
                <font>
                   <Font size="14.0" />
                </font>
@@ -68,9 +68,9 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="SaveList" textFill="WHITE">
+            <Label text="SaveList" textFill="#00fcb6">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="32.0" />
                </font>
                <padding>
                   <Insets left="20.0" />
@@ -105,6 +105,14 @@
                     </FXCollections>
                 </items>
             </JFXListView>
+            <JFXButton fx:id="backBtn" onAction="#toMain" style="-fx-background-color: #00fcb6;" text="Back">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </VBox.margin>
+            </JFXButton>
          </children>
       </VBox>
    </center>
