@@ -61,9 +61,9 @@
       </HBox>
    </top>
    <center>
-      <ImageView fitHeight="288.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="288.0" fx:id="content" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image fx:id="content" url="@image/firstpage/Tae.jpg" />
+            <Image url="@image/firstpage/Tae.jpg" />
          </image>
       </ImageView>
    </center>

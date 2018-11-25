@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -21,9 +22,12 @@ public class GuiController{
     private int index = 0;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
     @FXML private JFXButton readListBtn, saveListBtn, saveBtn;
+    @FXML private ImageView content;
+
     @FXML void registerHandler(ActionEvent event){
         registBtn.setText("wow");
     }
+
     @FXML void changeScene(Stage stage, String newScene){
         try {
             Parent newRoot = FXMLLoader.load(getClass().getResource(newScene));
@@ -34,7 +38,7 @@ public class GuiController{
         }
     }
     @FXML void backHandler(ActionEvent e)  {
-        Stage stage = (Stage)backBtn.getScene().getWindow();
+        Stage stage = (Stage) backBtn.getScene().getWindow();
         changeScene(stage, "Loginjfoenix.fxml");
     }
     @FXML void toRegisterHandle(ActionEvent e){
@@ -83,6 +87,7 @@ public class GuiController{
         String img = getImage(this.index);
         changeImg(img);
     }
+
     HashMap<Integer, String> getData(){
         HashMap<Integer, String> data = new HashMap<>();
         data.put(0, "https://hilight.kapook.com/view/180689");
@@ -94,27 +99,18 @@ public class GuiController{
     }
     String getImage(int index){
         HashMap<Integer, String> img = new HashMap<>();
-        img.put(0, "@image/firstpage/Tae.jpg");
-        img.put(1, "@image/firstpage/Cat.jpg");
-        img.put(2, "@image/firstpage/Star.jpg");
-        img.put(3, "@image/firstpage/Rov.jpg");
-        img.put(4, "@image/firstpage/Samsung.png");
+        img.put(0, "image/firstpage/Tae.jpg");
+        img.put(1, "image/firstpage/Cat.jpg");
+        img.put(2, "image/firstpage/Star.jpg");
+        img.put(3, "image/firstpage/Rov.jpg");
+        img.put(4, "image/firstpage/Samsung.png");
         return img.get(index);
     }
     @FXML void changeImg(String img){
-        Parent root = null;
-        Label content;
-        try {
-            root = FXMLLoader.load(getClass().getResource("Firstpage.fxml"));
-            content = (Label) root.lookup("#content");
-            System.out.println(content);
-            if (content!=null){
-                content.setText(img);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Image test = new Image(getClass().getResource(img).toExternalForm());
+        content.setImage(test);
     }
+
     @FXML void save(){
 
     }
