@@ -60,56 +60,81 @@
          </children>
       </HBox>
    </top>
-   <left>
-      <JFXButton prefHeight="34.0" prefWidth="116.0" style="-fx-background-color: #00fcb6;" text="previous" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="20.0" top="-50.0" />
-         </BorderPane.margin>
-         <graphic>
-            <ImageView fitHeight="66.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/firstpage/back-arrow.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-   </left>
-   <right>
-      <JFXButton prefHeight="34.0" prefWidth="116.0" style="-fx-background-color: #00fcb6;" text="next" textAlignment="RIGHT" wrapText="true" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets right="20.0" top="-50.0" />
-         </BorderPane.margin>
-         <padding>
-            <Insets right="20.0" />
-         </padding>
-         <graphic>
-            <ImageView fitHeight="66.0" fitWidth="25.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/firstpage/back-arrow.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-   </right>
-   <bottom>
-      <JFXButton prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #00fcb6;" text="Save" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="20.0" />
-         </BorderPane.margin>
-         <graphic>
-            <ImageView fitHeight="86.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/firstpage/Save-PNG-Photos.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-   </bottom>
    <center>
-      <ImageView fitHeight="311.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="288.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@image/firstpage/maxresdefault.jpg" />
+            <Image fx:id="content" url="@image/firstpage/Tae.jpg" />
          </image>
       </ImageView>
    </center>
+   <bottom>
+      <HBox prefHeight="0.0">
+         <children>
+            <JFXButton fx:id="readNow" onAction="#openLink" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Read now!" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/firstpage/study.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="saveBtn" onAction="#save" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Save" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/firstpage/Save-PNG-Photos.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <JFXButton fx:id="nextBtn" onAction="#next" prefHeight="10.0" prefWidth="120.0" style="-fx-background-color: #00fcb6;" text="Next" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/firstpage/forward-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </JFXButton>
+   </right>
+   <left>
+      <JFXButton fx:id="prevBtn" onAction="#previous" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #00fcb6;" text="Previous" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="24.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/firstpage/forward-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </JFXButton>
+   </left>
 </BorderPane>

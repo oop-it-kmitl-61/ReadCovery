@@ -101,7 +101,6 @@
                         <String fx:value="Test" />
                         <String fx:value="Test" />
                         <String fx:value="Test" />
-
                     </FXCollections>
                 </items>
             </JFXListView>

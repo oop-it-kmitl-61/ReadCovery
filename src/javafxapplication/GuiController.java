@@ -3,19 +3,24 @@ package javafxapplication;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import com.jfoenix.*;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.HashMap;
 
-public class GuiController {
-    @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn, readListBtn, saveListBtn;
+public class GuiController{
+    private int index = 0;
+    @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
+    @FXML private JFXButton readListBtn, saveListBtn, saveBtn;
     @FXML void registerHandler(ActionEvent event){
         registBtn.setText("wow");
     }
@@ -49,5 +54,68 @@ public class GuiController {
     }
     @FXML void saveList(ActionEvent e){
         changeScene((Stage)saveListBtn.getScene().getWindow(), "SaveList.fxml");
+    }
+    @FXML void openLink(ActionEvent e){
+        Desktop d = Desktop.getDesktop();
+        HashMap<Integer, String> data = getData();
+        String url = data.get(this.index);
+        try {
+            d.browse(new URI(url));
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+
+    }
+
+    @FXML void next(ActionEvent e){
+        this.index++;
+        this.index %= 5;
+        String img = getImage(this.index);
+        changeImg(img);
+    }
+    @FXML void previous(ActionEvent e) {
+        this.index--;
+        if (this.index < 0) {
+            this.index += 5;
+        }
+        String img = getImage(this.index);
+        changeImg(img);
+    }
+    HashMap<Integer, String> getData(){
+        HashMap<Integer, String> data = new HashMap<>();
+        data.put(0, "https://hilight.kapook.com/view/180689");
+        data.put(1, "https://www.catdumb.com/the-cat-lion-king-700/");
+        data.put(2, "https://www.catdumb.com/trappist-1-knowledge/");
+        data.put(3, "https://www.catdumb.com/game-tee-pom-119/");
+        data.put(4, "https://www.catdumb.com/4-cameras-119/");
+        return data;
+    }
+    String getImage(int index){
+        HashMap<Integer, String> img = new HashMap<>();
+        img.put(0, "@image/firstpage/Tae.jpg");
+        img.put(1, "@image/firstpage/Cat.jpg");
+        img.put(2, "@image/firstpage/Star.jpg");
+        img.put(3, "@image/firstpage/Rov.jpg");
+        img.put(4, "@image/firstpage/Samsung.png");
+        return img.get(index);
+    }
+    @FXML void changeImg(String img){
+        Parent root = null;
+        Label content;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Firstpage.fxml"));
+            content = (Label) root.lookup("#content");
+            System.out.println(content);
+            if (content!=null){
+                content.setText(img);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML void save(){
+
     }
 }
