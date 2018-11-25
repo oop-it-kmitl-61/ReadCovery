@@ -12,7 +12,7 @@
    <top>
       <HBox prefHeight="0.0">
          <children>
-            <JFXButton fx:id="readListBtn" onAction="#readList" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="ReadList" textAlignment="CENTER">
+            <JFXButton fx:id="readListBtn" onAction="#readList" prefHeight="77.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="ReadList" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -27,7 +27,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="saveListBtn" onAction="#saveList" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="SaveList" textAlignment="CENTER">
+            <JFXButton fx:id="saveListBtn" onAction="#saveList" prefHeight="77.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="SaveList" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Insets right="20.0" top="20.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton fx:id="toProfile" onAction="#toProfile" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Profile" textAlignment="CENTER">
+            <JFXButton fx:id="toProfile" onAction="#toProfile" prefHeight="77.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Profile" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -61,7 +61,7 @@
       </HBox>
    </top>
    <center>
-      <ImageView fitHeight="288.0" fx:id="content" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fx:id="content" fitHeight="330.0" fitWidth="467.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@image/firstpage/Tae.jpg" />
          </image>
@@ -70,7 +70,7 @@
    <bottom>
       <HBox prefHeight="0.0">
          <children>
-            <JFXButton fx:id="readNow" onAction="#openLink" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Read now!" textAlignment="CENTER">
+            <JFXButton fx:id="readNow" onAction="#openLink" prefHeight="77.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Read now!" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -85,7 +85,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton fx:id="saveBtn" onAction="#save" prefHeight="77.0" prefWidth="378.0" style="-fx-background-color: #00fcb6;" text="Save" textAlignment="CENTER">
+            <JFXButton fx:id="saveBtn" onAction="#save" prefHeight="77.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Save" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
@@ -104,7 +104,7 @@
       </HBox>
    </bottom>
    <right>
-      <JFXButton fx:id="nextBtn" onAction="#next" prefHeight="10.0" prefWidth="120.0" style="-fx-background-color: #00fcb6;" text="Next" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <JFXButton fx:id="nextBtn" onAction="#next" prefHeight="34.0" prefWidth="12.0" style="-fx-background-color: #00fcb6;" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
@@ -121,7 +121,7 @@
       </JFXButton>
    </right>
    <left>
-      <JFXButton fx:id="prevBtn" onAction="#previous" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #00fcb6;" text="Previous" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <JFXButton fx:id="prevBtn" onAction="#previous" prefHeight="34.0" prefWidth="0.0" style="-fx-background-color: #00fcb6;" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>

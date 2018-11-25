@@ -19,7 +19,10 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 
 public class GuiController{
+    HashMap<Integer, String> data = getData();
+    private int size = data.size();
     private int index = 0;
+    private boolean prev = true;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
     @FXML private JFXButton readListBtn, saveListBtn, saveBtn;
     @FXML private ImageView content;
@@ -61,7 +64,6 @@ public class GuiController{
     }
     @FXML void openLink(ActionEvent e){
         Desktop d = Desktop.getDesktop();
-        HashMap<Integer, String> data = getData();
         String url = data.get(this.index);
         try {
             d.browse(new URI(url));
@@ -75,17 +77,21 @@ public class GuiController{
 
     @FXML void next(ActionEvent e){
         this.index++;
-        this.index %= 5;
+        this.index %= size;
+        this.prev = true;
         String img = getImage(this.index);
         changeImg(img);
     }
     @FXML void previous(ActionEvent e) {
-        this.index--;
-        if (this.index < 0) {
-            this.index += 5;
+        if (this.prev == true) {
+            this.prev = false;
+            this.index--;
+            if (this.index < 0) {
+                this.index += size;
+            }
+            String img = getImage(this.index);
+            changeImg(img);
         }
-        String img = getImage(this.index);
-        changeImg(img);
     }
 
     HashMap<Integer, String> getData(){
@@ -95,6 +101,7 @@ public class GuiController{
         data.put(2, "https://www.catdumb.com/trappist-1-knowledge/");
         data.put(3, "https://www.catdumb.com/game-tee-pom-119/");
         data.put(4, "https://www.catdumb.com/4-cameras-119/");
+        data.put(5, "https://www.catdumb.com/10-weird-details-about-astronauts-everyday-lives-in-space-378/");
         return data;
     }
     String getImage(int index){
@@ -104,6 +111,7 @@ public class GuiController{
         img.put(2, "image/firstpage/Star.jpg");
         img.put(3, "image/firstpage/Rov.jpg");
         img.put(4, "image/firstpage/Samsung.png");
+        img.put(5, "image/firstpage/Space.jpg");
         return img.get(index);
     }
     @FXML void changeImg(String img){
@@ -112,6 +120,6 @@ public class GuiController{
     }
 
     @FXML void save(){
-
+        
     }
 }
