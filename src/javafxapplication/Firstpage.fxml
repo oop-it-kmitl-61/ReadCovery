@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -60,13 +61,6 @@
          </children>
       </HBox>
    </top>
-   <center>
-      <ImageView fx:id="content" fitHeight="330.0" fitWidth="467.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@image/firstpage/Tae.jpg" />
-         </image>
-      </ImageView>
-   </center>
    <bottom>
       <HBox prefHeight="0.0">
          <children>
@@ -137,4 +131,25 @@
          </BorderPane.margin>
       </JFXButton>
    </left>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <ImageView fx:id="content" fitHeight="343.0" fitWidth="467.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/firstpage/Tae.jpg" />
+               </image>
+            </ImageView>
+         </center>
+         <bottom>
+            <Label fx:id="Header" text="ออกหมายเรียกยูทูบเบอร์ดัง ดัดแปลงปืนยิงพลุ-พลาด ยิงใส่หมา เข้าข่ายทารุณสัตว์" textFill="WHITE" wrapText="true" BorderPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin>
+            </Label>
+         </bottom>
+      </BorderPane>
+   </center>
 </BorderPane>

@@ -1,18 +1,21 @@
 package javafxapplication;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,12 +23,15 @@ import java.util.HashMap;
 
 public class GuiController{
     HashMap<Integer, String> data = getData();
+    HashMap<String, Integer> saveBox = new HashMap<>();
     private int size = data.size();
     private int index = 0;
     private boolean prev = true;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
-    @FXML private JFXButton readListBtn, saveListBtn, saveBtn;
+    @FXML private JFXButton readListBtn, saveListBtn;
     @FXML private ImageView content;
+    @FXML private JFXListView storage;
+    @FXML private Label Header;
 
     @FXML void registerHandler(ActionEvent event){
         registBtn.setText("wow");
@@ -81,6 +87,7 @@ public class GuiController{
         this.prev = true;
         String img = getImage(this.index);
         changeImg(img);
+        changeHeader();
     }
     @FXML void previous(ActionEvent e) {
         if (this.prev == true) {
@@ -91,6 +98,7 @@ public class GuiController{
             }
             String img = getImage(this.index);
             changeImg(img);
+            changeHeader();
         }
     }
 
@@ -103,6 +111,17 @@ public class GuiController{
         data.put(4, "https://www.catdumb.com/4-cameras-119/");
         data.put(5, "https://www.catdumb.com/10-weird-details-about-astronauts-everyday-lives-in-space-378/");
         return data;
+    }
+
+    String getHeader(int index){
+        HashMap<Integer, String> header = new HashMap<>();
+        header.put(0, "ออกหมายเรียกยูทูบเบอร์ดัง ดัดแปลงปืนยิงพลุ พลาด ยิงใส่หมา เข้าข่ายทารุณสัตว์");
+        header.put(1, "อย่างฮา เมื่อทาสแมวพาเจ้าเหมียวถ่ายคลิปเลียนแบบตัวอย่าง Lion King เหมือนสุดๆ");
+        header.put(2, "14 เรื่องราวน่ารู้ หลังจากการค้นพบระบบดาวเคราะห์ TRAPPIST-1 ที่ทุกคนควรอ่าน…");
+        header.put(3, "8 เกม “ตีป้อม” ที่คนไทยควรหามาเล่นสักครั้งลองไหม ลองไหม เอาป่ะล่ะ!?");
+        header.put(4, "Samsung เปิดตัวสมาร์ตโฟนรุ่นใหม่GalaxyA9เครื่องแรกที่มีกล้องถึง 4 ตัว!?");
+        header.put(5, "10 เรื่องแปลกเกี่ยวกับการใช้ชีวิตระหว่างปฏิบัติการของนักบินอวกาศที่คุณอาจไม่เคยรู้มาก่อน");
+        return header.get(index);
     }
     String getImage(int index){
         HashMap<Integer, String> img = new HashMap<>();
@@ -119,7 +138,40 @@ public class GuiController{
         content.setImage(test);
     }
 
-    @FXML void save(){
-        
+    @FXML void changeHeader(){
+        Header.setText(getHeader(this.index));
     }
+    @FXML void save(){
+        String header = getHeader(index);
+        saveBox.put(header, index);
+        System.out.println(saveBox);
+        System.out.println(storage);
+        // Put Header to Storage
+        ObservableList<String> temp = storage.getItems();
+        System.out.println(temp);
+        temp.add(header);
+        storage.setItems(temp);
+        System.out.println(storage);
+    }
+
+//    @FXML void save(){
+//        String header = getHeader(index);
+//        saveBox.put(header, index);
+//        Parent root = null;
+//        try {
+//            root = FXMLLoader.load(getClass().getResource("SaveList.fxml"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        storage = (JFXListView) root.lookup("#storage");
+//        if (storage!=null){
+//            JFXListView test = new JFXListView();
+//            test.getItems().add("eiei");
+//            System.out.println(test.getItems());
+////            ObservableList<String> temp = storage.getItems();
+////            temp.add(header);
+//            storage.setItems(test.getItems());
+//            System.out.println(storage.getItems());
+//        }
+//    }
 }
