@@ -24,8 +24,8 @@ public class GuiStart extends Application{
         JSONArray data = api.getSelectedArticles(select);
         ArrayList<HashMap> apiData = api.getData(data);
         app = AppAction.getInstance();
-        app.setSelects(apiData);
-        app.prepInstance();
+//        app.setSelects(apiData);
+//        app.prepInstance();
         Parent root = FXMLLoader.load(getClass().getResource("../javafxapplication/Loginjfoenix.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Login");

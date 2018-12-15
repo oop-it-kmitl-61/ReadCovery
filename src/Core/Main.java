@@ -29,5 +29,17 @@ public class Main {
         ArrayList<HashMap> apiData = api.getData(data);
         AppAction app = AppAction.getInstance();
         app.setNewsList(apiData);
+
+        System.out.println(app.getCurrent());
+        app.next();
+        System.out.println(app.getCurrent());
+        app.previous();
+        System.out.println(app.getCurrent());
+        app.save();
+
+        app.next();
+        System.out.println(app.getCurrent());
+        app.save();
+        System.out.println(app.getsaveList());
     }
 }
