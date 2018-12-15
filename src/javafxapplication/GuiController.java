@@ -14,7 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
+import Core.AppAction;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -24,9 +24,11 @@ import java.util.HashMap;
 public class GuiController{
     HashMap<Integer, String> data = getData();
     HashMap<String, Integer> saveBox = new HashMap<>();
+    private AppAction app = AppAction.getInstance();
     private int size = data.size();
     private int index = 0;
     private boolean prev = true;
+    private HashMap<String, String> nowData;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
     @FXML private JFXButton readListBtn, saveListBtn;
     @FXML private ImageView content;
@@ -82,25 +84,41 @@ public class GuiController{
     }
 
     @FXML void next(ActionEvent e){
-        this.index++;
-        this.index %= size;
-        this.prev = true;
-        String img = getImage(this.index);
-        changeImg(img);
-        changeHeader();
+//        this.index++;
+//        this.index %= size;
+//        this.prev = true;
+//        String img = getImage(this.index);
+//        changeImg(img);
+//        changeHeader();
+//        System.out.println(app.getNow());
+        app.next();
+        nowData = app.getNow();
+        System.out.println(nowData.get("urlToImage"));
+        changeImg(nowData.get("urlToImage"));
+        changeHeader(nowData.get("title"));
+        System.out.println("Next");
     }
     @FXML void previous(ActionEvent e) {
-        if (this.prev == true) {
-            this.prev = false;
-            this.index--;
-            if (this.index < 0) {
-                this.index += size;
-            }
-            String img = getImage(this.index);
-            changeImg(img);
-            changeHeader();
-        }
+//        if (this.prev == true) {
+//            this.prev = false;
+//            this.index--;
+//            if (this.index < 0) {
+//                this.index += size;
+//            }
+//
+//            String img = getImage(this.index);
+//            changeImg(img);
+//            changeHeader();
+//        }
+        app.prev();
+        nowData = app.getNow();
+//        System.out.println(nowData.get("urlToImage"));
+        changeImg(nowData.get("urlToImage"));
+        changeHeader(nowData.get("title"));
+        System.out.println("Prev");
+        System.out.println(app.getPrev().toString());
     }
+
 
     HashMap<Integer, String> getData(){
         HashMap<Integer, String> data = new HashMap<>();
@@ -134,12 +152,12 @@ public class GuiController{
         return img.get(index);
     }
     @FXML void changeImg(String img){
-        Image test = new Image(getClass().getResource(img).toExternalForm());
+        Image test = new Image(img);
         content.setImage(test);
     }
 
-    @FXML void changeHeader(){
-        Header.setText(getHeader(this.index));
+    @FXML void changeHeader(String text){
+        Header.setText(text);
     }
     @FXML void save(){
         String header = getHeader(index);

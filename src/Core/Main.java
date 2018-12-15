@@ -1,3 +1,5 @@
+package Core;
+
 import org.json.*;
 
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ public class Main {
     private static JSONArray data_pool;
 
     public static void main(String[] args)throws Exception{
-//        api = new ApiUtil(API);
+//        api = new Core.ApiUtil(API);
 //        data_pool = new JSONArray();
 //        System.out.println("======================");
 //        api.setCat("business");
@@ -25,7 +27,7 @@ public class Main {
         JSONArray data = api.getSelectedArticles(select);
 //        ArrayList<String> titles = api.getArticleTitle(data);
         ArrayList<HashMap> apiData = api.getData(data);
-        Application app = new Application(apiData);
+        AppAction app = new AppAction(apiData);
         int act;
         Scanner sc = new Scanner(System.in);
 

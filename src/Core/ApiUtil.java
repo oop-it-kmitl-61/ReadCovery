@@ -1,3 +1,5 @@
+package Core;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.CDL;
@@ -20,9 +22,10 @@ public class ApiUtil {
     private static HttpURLConnection con;
     private static StringBuilder content;
 
-    public ApiUtil(String api){
+    public ApiUtil(){
 
     }
+
 
     public static JSONObject callAPI()throws MalformedURLException, ProtocolException, IOException {
         try {

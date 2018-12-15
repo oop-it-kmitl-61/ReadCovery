@@ -1,19 +1,38 @@
+package Core;
+
 import org.json.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Application {
+public class AppAction {
     private JSONArray data_pool;
     private ArrayList<HashMap> selects;
     private ArrayList<HashMap> saveList;
     private ArrayList<HashMap> prevList;
     private ArrayList<HashMap> now;
     private int random, maxBound;
+    private static AppAction INSTANCE;
 
+    public AppAction(){
 
-    public Application(ArrayList<HashMap> arr){
+    }
+    public AppAction(ArrayList<HashMap> arr){
         this.selects = arr;
+        prepInstance();
+    }
+    public static AppAction getInstance(){
+        if(INSTANCE == null){
+            INSTANCE = new AppAction();
+        }
+        return INSTANCE;
+    }
+
+    public void setSelects(ArrayList<HashMap> selects) {
+        this.selects = selects;
+    }
+
+    public void prepInstance(){
         this.maxBound = this.selects.size()-1;
 
         this.random = getRandom();
@@ -22,7 +41,6 @@ public class Application {
         this.prevList = new ArrayList<>();
         this.now = new ArrayList<>();
     }
-
     public int getRandom(){
         maxBound = selects.size()-1;
         return (int)(Math.random() * maxBound) + 1;
@@ -58,7 +76,13 @@ public class Application {
     }
     public void setNow(HashMap txt){
         if(this.prevList.size() > 0){
-            this.now.set(0, txt);
+            System.out.println(now.toString());
+            if(this.now.size() == 0){
+                this.now.add(0, txt);
+            }else {
+                this.now.set(0, txt);
+            }
+
         }
     }
     public void prev(){
