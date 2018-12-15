@@ -92,13 +92,15 @@ public class GuiController{
 //        changeHeader();
 //        System.out.println(app.getNow());
         app.next();
-        nowData = app.getNow();
+        nowData = app.getCurrent();
         System.out.println(nowData.get("urlToImage"));
         changeImg(nowData.get("urlToImage"));
         changeHeader(nowData.get("title"));
         System.out.println("Next");
     }
     @FXML void previous(ActionEvent e) {
+        app.previous();
+        nowData = app.getCurrent();
 //        if (this.prev == true) {
 //            this.prev = false;
 //            this.index--;
@@ -110,13 +112,13 @@ public class GuiController{
 //            changeImg(img);
 //            changeHeader();
 //        }
-        app.prev();
-        nowData = app.getNow();
-//        System.out.println(nowData.get("urlToImage"));
-        changeImg(nowData.get("urlToImage"));
-        changeHeader(nowData.get("title"));
-        System.out.println("Prev");
-        System.out.println(app.getPrev().toString());
+//        app.prev();
+//        nowData = app.getNow();
+////        System.out.println(nowData.get("urlToImage"));
+//        changeImg(nowData.get("urlToImage"));
+//        changeHeader(nowData.get("title"));
+//        System.out.println("Prev");
+//        System.out.println(app.getPrev().toString());
     }
 
 
