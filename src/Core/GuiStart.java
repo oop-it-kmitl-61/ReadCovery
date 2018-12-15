@@ -24,6 +24,7 @@ public class GuiStart extends Application{
         JSONArray data = api.getSelectedArticles(select);
         ArrayList<HashMap> apiData = api.getData(data);
         app = AppAction.getInstance();
+        app.setNewsList(apiData);
 //        app.setSelects(apiData);
 //        app.prepInstance();
         Parent root = FXMLLoader.load(getClass().getResource("../javafxapplication/Loginjfoenix.fxml"));

@@ -99,8 +99,13 @@ public class GuiController{
         System.out.println("Next");
     }
     @FXML void previous(ActionEvent e) {
-        app.previous();
-        nowData = app.getCurrent();
+        if(app.previous()) {
+            nowData = app.getCurrent();
+            System.out.println(nowData.get("urlToImage"));
+            changeImg(nowData.get("urlToImage"));
+            changeHeader(nowData.get("title"));
+            System.out.println("Previos");
+        }
 //        if (this.prev == true) {
 //            this.prev = false;
 //            this.index--;

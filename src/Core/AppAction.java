@@ -19,6 +19,7 @@ public class AppAction {
     private ArrayList<HashMap> newsList;
     private ArrayList<HashMap> saveList = new ArrayList<>();
     private ArrayList<HashMap> prevStack = new ArrayList<>();
+    private Random rand = new Random();
     private static AppAction INSTANCE;
     private HashMap current;
 
@@ -38,24 +39,26 @@ public class AppAction {
 
     public void setNewsList(ArrayList<HashMap> newsList) {
         this.newsList = newsList;
-        Random rand = new Random();
         int randomIndex = rand.nextInt(newsList.size());
         this.current = newsList.get(randomIndex);
         newsList.remove(current);
     }
 
     public void next(){
-        Random rand = new Random();
+        newsList.remove(current);
         int randomIndex = rand.nextInt(newsList.size());
         HashMap random = newsList.get(randomIndex);
         prevStack.add(current);
         this.current = random;
         newsList.remove(randomIndex);
     }
-    public void previous(){
-        HashMap response = prevStack.get(prevStack.size()-1);
-        this.current = response;
-        prevStack.remove(prevStack.size()-1);
+    public boolean previous(){
+        if(prevStack.size() > 0){
+            HashMap response = prevStack.get(prevStack.size()-1);
+            this.current = response;
+            prevStack.remove(prevStack.size()-1);
+            return true;
+        }return false;
     }
     public void save(){
         saveList.add(current);
