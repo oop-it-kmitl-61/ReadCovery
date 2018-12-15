@@ -72,7 +72,8 @@ public class GuiController{
     }
     @FXML void openLink(ActionEvent e){
         Desktop d = Desktop.getDesktop();
-        String url = data.get(this.index);
+        nowData = app.getCurrent();
+        String url = nowData.get("url");
         try {
             d.browse(new URI(url));
         } catch (IOException e1) {
@@ -93,7 +94,6 @@ public class GuiController{
 //        System.out.println(app.getNow());
         app.next();
         nowData = app.getCurrent();
-        System.out.println(nowData.get("urlToImage"));
         changeImg(nowData.get("urlToImage"));
         changeHeader(nowData.get("title"));
         System.out.println("Next");
