@@ -17,12 +17,12 @@ import java.util.Random;
 
 public class AppAction {
     private ArrayList<HashMap> newsList;
-    private ArrayList<HashMap> saveList = new ArrayList<>();
     private ArrayList<HashMap> prevStack = new ArrayList<>();
     private Random rand = new Random();
     private static AppAction INSTANCE;
     private HashMap current;
-
+    private HashMap<String, String> saveBox = new HashMap<>();
+    private HashMap<String, String> readBox = new HashMap<>();
     public AppAction(){
 
     }
@@ -61,10 +61,12 @@ public class AppAction {
         }return false;
     }
     public void save(){
-        saveList.add(current);
         newsList.remove(current);
+        saveBox.put(current.get("title").toString(), current.get("url").toString());
     }
-
+    public void read(String title, String url){
+        readBox.put(title, url);
+    }
     public ArrayList<HashMap> getNewsList(){
         return this.newsList;
     }
@@ -73,7 +75,10 @@ public class AppAction {
         return this.current;
     }
 
-    public ArrayList<HashMap> getsaveList(){
-        return this.saveList;
+    public HashMap getreadBox(){
+        return this.readBox;
+    }
+    public HashMap getsaveBox(){
+        return this.saveBox;
     }
 }

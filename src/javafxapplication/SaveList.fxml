@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.GuiController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.SaveListController">
    <top>
       <HBox BorderPane.alignment="CENTER">
          <children>
@@ -81,7 +81,7 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
                 <items>
-                    <FXCollections fx:id="collections" fx:factory="observableArrayList">
+                    <FXCollections fx:factory="observableArrayList">
 
                     </FXCollections>
                 </items>

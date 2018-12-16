@@ -40,6 +40,6 @@ public class Main {
         app.next();
         System.out.println(app.getCurrent());
         app.save();
-        System.out.println(app.getsaveList());
+        System.out.println(app.getsaveBox());
     }
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.GuiController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.ReadListController">
    <top>
       <HBox BorderPane.alignment="CENTER">
          <children>
@@ -76,31 +76,12 @@
                   <Insets left="20.0" />
                </padding>
             </Label>
-            <JFXListView prefHeight="1000.0" prefWidth="1000.0" style="-fx-border-color: #00fcb6;">
+            <JFXListView fx:id="history" prefHeight="1000.0" prefWidth="1000.0" style="-fx-border-color: #00fcb6;">
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
-                        <String fx:value="Test" />
 
                     </FXCollections>
                 </items>
@@ -126,7 +107,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="readAgain" prefHeight="34.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Read again">
+            <JFXButton fx:id="readAgain" onAction="#ReadInList" prefHeight="34.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Read again">
                <font>
                   <Font size="14.0" />
                </font>

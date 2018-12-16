@@ -26,17 +26,13 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    private static HashMap<String, String> saveBox = new HashMap<>();
+    private static HashMap<String, String> saveBox;
     private AppAction app = AppAction.getInstance();
     private boolean prev = true;
     private HashMap<String, String> nowData;
-    @FXML
-    private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn, logoutBtn;
+    @FXML private JFXButton toProfile;
     @FXML private JFXButton readListBtn, saveListBtn;
-    @FXML private JFXTextField userTf,regEmailTf,regUserTf;
-    @FXML private JFXPasswordField passwordTf,regPassPf,regCpTf;
     @FXML private ImageView content;
-    @FXML private JFXListView storage;
     @FXML private Label Header;
 
     @FXML void changeScene(Stage stage, String newScene){
@@ -47,10 +43,6 @@ public class MainController implements Initializable {
         } catch (IOException e){
             e.printStackTrace();
         }
-    }
-    @FXML void backHandler(ActionEvent e)  {
-        Stage stage = (Stage) backBtn.getScene().getWindow();
-        changeScene(stage, "Loginjfoenix.fxml");
     }
 
     @FXML void toProfile(ActionEvent e){
@@ -68,6 +60,7 @@ public class MainController implements Initializable {
         Desktop d = Desktop.getDesktop();
         nowData = app.getCurrent();
         String url = nowData.get("url");
+        app.read(nowData.get("title"), url);
         try {
             d.browse(new URI(url));
         } catch (IOException e1) {
@@ -112,15 +105,12 @@ public class MainController implements Initializable {
         Header.setText(text);
     }
     @FXML void save(){
-        nowData = app.getCurrent();
-        String title = nowData.get("title");
-        String url = nowData.get("url");
-        saveBox.put(title, url);
-        System.out.println(saveBox);
+        app.save();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         nowData = app.getCurrent();
         changeImg(nowData.get("urlToImage"));
+        changeHeader(nowData.get("title"));
     }
 }
