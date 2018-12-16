@@ -72,7 +72,8 @@ public class GuiController{
     }
     @FXML void openLink(ActionEvent e){
         Desktop d = Desktop.getDesktop();
-        String url = data.get(this.index);
+        nowData = app.getCurrent();
+        String url = nowData.get("url");
         try {
             d.browse(new URI(url));
         } catch (IOException e1) {
@@ -93,14 +94,23 @@ public class GuiController{
 //        System.out.println(app.getNow());
         app.next();
         nowData = app.getCurrent();
-        System.out.println(nowData.get("urlToImage"));
-        changeImg(nowData.get("urlToImage"));
-        changeHeader(nowData.get("title"));
-        System.out.println("Next");
+        try{
+            System.out.println(nowData.get("urlToImage"));
+            changeImg(nowData.get("urlToImage"));
+            changeHeader(nowData.get("title"));
+            System.out.println("Next");
+        }catch(Exception ex){
+            System.out.println(ex);
+        }
     }
     @FXML void previous(ActionEvent e) {
-        app.previous();
-        nowData = app.getCurrent();
+        if(app.previous()) {
+            nowData = app.getCurrent();
+            System.out.println(nowData.get("urlToImage"));
+            changeImg(nowData.get("urlToImage"));
+            changeHeader(nowData.get("title"));
+            System.out.println("Previous");
+        }
 //        if (this.prev == true) {
 //            this.prev = false;
 //            this.index--;

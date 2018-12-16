@@ -13,3 +13,6 @@ hs_err_pid*
 .idea
 out/
 ReadCovery.iml
+.idea/workspace.xml
+.idea/misc.xml
+.idea/workspace.xml
