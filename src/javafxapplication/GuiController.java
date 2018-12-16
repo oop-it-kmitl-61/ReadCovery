@@ -2,6 +2,8 @@ package javafxapplication;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,11 +30,17 @@ public class GuiController{
     private HashMap<String, String> nowData;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
     @FXML private JFXButton readListBtn, saveListBtn;
+    @FXML private JFXTextField userTf,regEmailTf,regUserTf;
+    @FXML private JFXPasswordField passwordTf,regPassPf,regCpTf;
     @FXML private ImageView content;
     @FXML private JFXListView storage;
     @FXML private Label Header;
 
     @FXML void registerHandler(ActionEvent event){
+        System.out.println("Email:" +regEmailTf.getText());
+        System.out.println("User:"+regUserTf.getText());
+        System.out.println("Pass:"+regPassPf.getText());
+        System.out.println("Confirm-Pass:"+regCpTf.getText());
         registBtn.setText("wow");
     }
 
@@ -59,6 +67,8 @@ public class GuiController{
         changeScene((Stage)backBtn.getScene().getWindow(), "Firstpage.fxml");
     }
     @FXML void login(ActionEvent e){
+        System.out.println(userTf.getText());
+        System.out.println(passwordTf.getText());
         changeScene((Stage)loginBtn.getScene().getWindow(), "Firstpage.fxml");
     }
     @FXML void readList(ActionEvent e){
