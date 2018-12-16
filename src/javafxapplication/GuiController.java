@@ -2,6 +2,8 @@ package javafxapplication;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,6 +30,8 @@ public class GuiController{
     private HashMap<String, String> nowData;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
     @FXML private JFXButton readListBtn, saveListBtn;
+    @FXML private JFXTextField userTf;
+    @FXML private JFXPasswordField passwordTf;
     @FXML private ImageView content;
     @FXML private JFXListView storage;
     @FXML private Label Header;
@@ -63,11 +67,14 @@ public class GuiController{
         changeHeader(nowData.get("title"));
     }
     @FXML void login(ActionEvent e){
+        System.out.println(userTf.getText());
+        System.out.println(passwordTf.getText());
         changeScene((Stage)loginBtn.getScene().getWindow(), "Firstpage.fxml");
-        nowData = app.getCurrent();
-        System.out.println(nowData.get("urlToImage"));
-        changeImg(nowData.get("urlToImage"));
-        changeHeader(nowData.get("title"));
+//        nowData = app.getCurrent();
+//        System.out.println(nowData.get("urlToImage"));
+//        changeImg(nowData.get("urlToImage"));
+//        changeHeader(nowData.get("title"));
+
     }
     @FXML void readList(ActionEvent e){
         changeScene((Stage)readListBtn.getScene().getWindow(), "ReadList.fxml");

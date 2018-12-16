@@ -20,7 +20,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-            <JFXPasswordField fx:id="passTf" style="-fx-text-fill: white;" unFocusColor="WHITE" />
+            <JFXPasswordField fx:id="passwordTf" style="-fx-text-fill: white;" unFocusColor="WHITE" />
             <JFXButton fx:id="loginBtn" onAction="#login" prefHeight="26.0" prefWidth="290.0" style="-fx-background-color: #00fcb6;" text="Login" textAlignment="CENTER">
                <VBox.margin>
                   <Insets top="20.0" />
