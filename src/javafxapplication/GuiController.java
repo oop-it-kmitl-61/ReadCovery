@@ -22,11 +22,8 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 
 public class GuiController{
-    HashMap<Integer, String> data = getData();
     HashMap<String, Integer> saveBox = new HashMap<>();
     private AppAction app = AppAction.getInstance();
-    private int size = data.size();
-    private int index = 0;
     private boolean prev = true;
     private HashMap<String, String> nowData;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
@@ -60,9 +57,17 @@ public class GuiController{
     }
     @FXML void toMain(ActionEvent e){
         changeScene((Stage)backBtn.getScene().getWindow(), "Firstpage.fxml");
+        nowData = app.getCurrent();
+        System.out.println(nowData.get("urlToImage"));
+        changeImg(nowData.get("urlToImage"));
+        changeHeader(nowData.get("title"));
     }
     @FXML void login(ActionEvent e){
         changeScene((Stage)loginBtn.getScene().getWindow(), "Firstpage.fxml");
+        nowData = app.getCurrent();
+        System.out.println(nowData.get("urlToImage"));
+        changeImg(nowData.get("urlToImage"));
+        changeHeader(nowData.get("title"));
     }
     @FXML void readList(ActionEvent e){
         changeScene((Stage)readListBtn.getScene().getWindow(), "ReadList.fxml");
@@ -85,13 +90,7 @@ public class GuiController{
     }
 
     @FXML void next(ActionEvent e){
-//        this.index++;
-//        this.index %= size;
-//        this.prev = true;
-//        String img = getImage(this.index);
-//        changeImg(img);
-//        changeHeader();
-//        System.out.println(app.getNow());
+        prev = true;
         app.next();
         nowData = app.getCurrent();
         try{
@@ -104,65 +103,16 @@ public class GuiController{
         }
     }
     @FXML void previous(ActionEvent e) {
-        if(app.previous()) {
+        if(app.previous() && prev) {
+            prev = false;
             nowData = app.getCurrent();
             System.out.println(nowData.get("urlToImage"));
             changeImg(nowData.get("urlToImage"));
             changeHeader(nowData.get("title"));
             System.out.println("Previous");
         }
-//        if (this.prev == true) {
-//            this.prev = false;
-//            this.index--;
-//            if (this.index < 0) {
-//                this.index += size;
-//            }
-//
-//            String img = getImage(this.index);
-//            changeImg(img);
-//            changeHeader();
-//        }
-//        app.prev();
-//        nowData = app.getNow();
-////        System.out.println(nowData.get("urlToImage"));
-//        changeImg(nowData.get("urlToImage"));
-//        changeHeader(nowData.get("title"));
-//        System.out.println("Prev");
-//        System.out.println(app.getPrev().toString());
     }
 
-
-    HashMap<Integer, String> getData(){
-        HashMap<Integer, String> data = new HashMap<>();
-        data.put(0, "https://hilight.kapook.com/view/180689");
-        data.put(1, "https://www.catdumb.com/the-cat-lion-king-700/");
-        data.put(2, "https://www.catdumb.com/trappist-1-knowledge/");
-        data.put(3, "https://www.catdumb.com/game-tee-pom-119/");
-        data.put(4, "https://www.catdumb.com/4-cameras-119/");
-        data.put(5, "https://www.catdumb.com/10-weird-details-about-astronauts-everyday-lives-in-space-378/");
-        return data;
-    }
-
-    String getHeader(int index){
-        HashMap<Integer, String> header = new HashMap<>();
-        header.put(0, "ออกหมายเรียกยูทูบเบอร์ดัง ดัดแปลงปืนยิงพลุ พลาด ยิงใส่หมา เข้าข่ายทารุณสัตว์");
-        header.put(1, "อย่างฮา เมื่อทาสแมวพาเจ้าเหมียวถ่ายคลิปเลียนแบบตัวอย่าง Lion King เหมือนสุดๆ");
-        header.put(2, "14 เรื่องราวน่ารู้ หลังจากการค้นพบระบบดาวเคราะห์ TRAPPIST-1 ที่ทุกคนควรอ่าน…");
-        header.put(3, "8 เกม “ตีป้อม” ที่คนไทยควรหามาเล่นสักครั้งลองไหม ลองไหม เอาป่ะล่ะ!?");
-        header.put(4, "Samsung เปิดตัวสมาร์ตโฟนรุ่นใหม่GalaxyA9เครื่องแรกที่มีกล้องถึง 4 ตัว!?");
-        header.put(5, "10 เรื่องแปลกเกี่ยวกับการใช้ชีวิตระหว่างปฏิบัติการของนักบินอวกาศที่คุณอาจไม่เคยรู้มาก่อน");
-        return header.get(index);
-    }
-    String getImage(int index){
-        HashMap<Integer, String> img = new HashMap<>();
-        img.put(0, "image/firstpage/Tae.jpg");
-        img.put(1, "image/firstpage/Cat.jpg");
-        img.put(2, "image/firstpage/Star.jpg");
-        img.put(3, "image/firstpage/Rov.jpg");
-        img.put(4, "image/firstpage/Samsung.png");
-        img.put(5, "image/firstpage/Space.jpg");
-        return img.get(index);
-    }
     @FXML void changeImg(String img){
         Image test = new Image(img);
         content.setImage(test);
@@ -172,36 +122,10 @@ public class GuiController{
         Header.setText(text);
     }
     @FXML void save(){
-        String header = getHeader(index);
-        saveBox.put(header, index);
-        System.out.println(saveBox);
-        System.out.println(storage);
-        // Put Header to Storage
+        nowData = app.getCurrent();
         ObservableList<String> temp = storage.getItems();
-        System.out.println(temp);
-        temp.add(header);
+        temp.add(nowData.get("Title"));
         storage.setItems(temp);
         System.out.println(storage);
     }
-
-//    @FXML void save(){
-//        String header = getHeader(index);
-//        saveBox.put(header, index);
-//        Parent root = null;
-//        try {
-//            root = FXMLLoader.load(getClass().getResource("SaveList.fxml"));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        storage = (JFXListView) root.lookup("#storage");
-//        if (storage!=null){
-//            JFXListView test = new JFXListView();
-//            test.getItems().add("eiei");
-//            System.out.println(test.getItems());
-////            ObservableList<String> temp = storage.getItems();
-////            temp.add(header);
-//            storage.setItems(test.getItems());
-//            System.out.println(storage.getItems());
-//        }
-//    }
 }
