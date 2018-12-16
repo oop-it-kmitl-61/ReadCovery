@@ -42,19 +42,19 @@ public class ProfileController implements Initializable {
         System.out.println("Password : "+pswTf.getText());
         System.out.print("Favorite : ");
         if(random.isSelected()){
-            System.out.print("Random ");
+            System.out.print(random.getText()+" ");
         }
         if(political.isSelected()){
-            System.out.print("Political ");
+            System.out.print(political.getText()+" ");
         }
         if(sport.isSelected()){
-            System.out.print("Sport ");
+            System.out.print(sport.getText()+" ");
         }
         if(entertainment.isSelected()){
-            System.out.print("Entertainment ");
+            System.out.print(entertainment.getText()+" ");
         }
         if(technology.isSelected()){
-            System.out.print("Technology ");
+            System.out.print(technology.getText()+" ");
         }
     }
     @Override
@@ -63,7 +63,7 @@ public class ProfileController implements Initializable {
         usTf.setText("OOP");
         pswTf.setText("6969");
         random.setSelected(true);
-        entertainment.setSelected(true);
+        sport.setSelected(true);
         technology.setSelected(true);
     }
 }
