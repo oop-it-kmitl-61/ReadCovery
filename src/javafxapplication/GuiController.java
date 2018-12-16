@@ -28,7 +28,7 @@ public class GuiController{
     private AppAction app = AppAction.getInstance();
     private boolean prev = true;
     private HashMap<String, String> nowData;
-    @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
+    @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn, logoutBtn;
     @FXML private JFXButton readListBtn, saveListBtn;
     @FXML private JFXTextField userTf,regEmailTf,regUserTf;
     @FXML private JFXPasswordField passwordTf,regPassPf,regCpTf;
@@ -130,5 +130,8 @@ public class GuiController{
         temp.add(nowData.get("Title"));
         storage.setItems(temp);
         System.out.println(storage);
+    }
+    @FXML void logout(){
+        changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");
     }
 }
