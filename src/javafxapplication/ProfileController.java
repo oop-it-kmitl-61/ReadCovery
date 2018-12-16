@@ -1,6 +1,7 @@
 package javafxapplication;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -19,6 +20,7 @@ public class ProfileController implements Initializable {
     @FXML private JFXTextField usTf, emlTf;
     @FXML private JFXPasswordField pswTf;
     @FXML public JFXButton backBtn, logoutBtn, settingBtn;
+    @FXML private JFXCheckBox random, political, sport, entertainment, technology;
     @FXML void changeScene(Stage stage, String newScene){
         try {
             Parent newRoot = FXMLLoader.load(getClass().getResource(newScene));
@@ -35,14 +37,32 @@ public class ProfileController implements Initializable {
         changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");
     }
     @FXML void setting(){
-        System.out.println(emlTf.getText());
-        System.out.println(usTf.getText());
-        System.out.println(pswTf.getText());
+        System.out.println("Email : "+emlTf.getText());
+        System.out.println("Username : "+usTf.getText());
+        System.out.println("Password : "+pswTf.getText());
+        System.out.print("Favorite : ");
+        if(random.isSelected()){
+            System.out.print("Random ");
+        }
+        if(political.isSelected()){
+            System.out.print("Political ");
+        }
+        if(sport.isSelected()){
+            System.out.print("Sport ");
+        }
+        if(entertainment.isSelected()){
+            System.out.print("Entertainment ");
+        if(technology.isSelected()){
+            System.out.print("Technology ");
+        }
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         emlTf.setText("OOP6969@it.kmitl.ac.th");
         usTf.setText("OOP");
         pswTf.setText("6969");
+        random.setSelected(true);
+        entertainment.setSelected(true);
+        technology.setSelected(true);
     }
 }

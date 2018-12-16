@@ -40,32 +40,32 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXCheckBox checkedColor="#28ff02" text="Random" textFill="WHITE" unCheckedColor="WHITE">
+                  <JFXCheckBox fx:id="random" checkedColor="#28ff02" text="Random" textFill="WHITE" unCheckedColor="WHITE">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox checkedColor="#28ff02" text="Political" textFill="WHITE" unCheckedColor="WHITE">
+                  <JFXCheckBox fx:id="political" checkedColor="#28ff02" text="Political" textFill="WHITE" unCheckedColor="WHITE">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox checkedColor="#28ff02" text="Sport" textFill="WHITE" unCheckedColor="WHITE">
+                  <JFXCheckBox fx:id="sport" checkedColor="#28ff02" text="Sport" textFill="WHITE" unCheckedColor="WHITE">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox checkedColor="#28ff02" text="Entertainment" textFill="WHITE" unCheckedColor="WHITE">
+                  <JFXCheckBox fx:id="entertainment" checkedColor="#28ff02" text="Entertainment" textFill="WHITE" unCheckedColor="WHITE">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </JFXCheckBox>
-                  <JFXCheckBox checkedColor="#28ff02" text="Technology" textFill="WHITE" unCheckedColor="WHITE">
+                  <JFXCheckBox fx:id="technology" checkedColor="#28ff02" text="Technology" textFill="WHITE" unCheckedColor="WHITE">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </JFXCheckBox>
-                  <JFXButton fx:id="settingBtn" onAction="#setting" alignment="TOP_CENTER" prefHeight="60.0" prefWidth="134.0" style="-fx-background-color: #00fcb6;" text="Save Setting">
+                  <JFXButton fx:id="settingBtn" alignment="TOP_CENTER" onAction="#setting" prefHeight="60.0" prefWidth="134.0" style="-fx-background-color: #00fcb6;" text="Save Setting">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
