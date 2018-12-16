@@ -1,11 +1,10 @@
 package javafxapplication;
 
+import Core.AppAction;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,11 +12,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import Core.AppAction;
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -26,27 +24,20 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class GuiController{
+public class MainController implements Initializable {
+
     private static HashMap<String, String> saveBox = new HashMap<>();
     private AppAction app = AppAction.getInstance();
     private boolean prev = true;
     private HashMap<String, String> nowData;
-    @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn, logoutBtn;
+    @FXML
+    private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn, logoutBtn;
     @FXML private JFXButton readListBtn, saveListBtn;
     @FXML private JFXTextField userTf,regEmailTf,regUserTf;
     @FXML private JFXPasswordField passwordTf,regPassPf,regCpTf;
     @FXML private ImageView content;
     @FXML private JFXListView storage;
     @FXML private Label Header;
-
-
-    @FXML void registerHandler(ActionEvent event){
-        System.out.println("Email:" +regEmailTf.getText());
-        System.out.println("User:"+regUserTf.getText());
-        System.out.println("Pass:"+regPassPf.getText());
-        System.out.println("Confirm-Pass:"+regCpTf.getText());
-        registBtn.setText("wow");
-    }
 
     @FXML void changeScene(Stage stage, String newScene){
         try {
@@ -61,20 +52,12 @@ public class GuiController{
         Stage stage = (Stage) backBtn.getScene().getWindow();
         changeScene(stage, "Loginjfoenix.fxml");
     }
-    @FXML void toRegisterHandle(ActionEvent e){
-        changeScene((Stage) toRegister.getScene().getWindow(), "Register.fxml");
-    }
+
     @FXML void toProfile(ActionEvent e){
         changeScene((Stage)toProfile.getScene().getWindow(), "Profile.fxml");
     }
-    @FXML void toMain(ActionEvent e){
-        changeScene((Stage)backBtn.getScene().getWindow(), "MainPage.fxml");
-    }
-    @FXML void login(ActionEvent e){
-        System.out.println(userTf.getText());
-        System.out.println(passwordTf.getText());
-        changeScene((Stage)loginBtn.getScene().getWindow(), "MainPage.fxml");
-    }
+
+
     @FXML void readList(ActionEvent e){
         changeScene((Stage)readListBtn.getScene().getWindow(), "ReadList.fxml");
     }
@@ -120,7 +103,7 @@ public class GuiController{
     }
 
     @FXML void changeImg(String img){
-        Image test = new Image(img);
+        javafx.scene.image.Image test = new Image(img);
         System.out.println(img);
         content.setImage(test);
     }
@@ -135,38 +118,9 @@ public class GuiController{
         saveBox.put(title, url);
         System.out.println(saveBox);
     }
-    @FXML void ReadInList(){
-        for ( String key : saveBox.keySet() ) {
-            int check = 0;
-            for(int i=0;i<storage.getItems().size();i++){
-                if(key.equals(storage.getItems().get(i))){
-                    check = 1;
-                }
-            }
-            if(check == 0){
-                storage.getItems().add(key);
-            }
-        }
-        try{
-            String selected = storage.getSelectionModel().getSelectedItem().toString();
-            Desktop d = Desktop.getDesktop();
-            String url = saveBox.get(selected);
-            try {
-                d.browse(new URI(url));
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } catch (URISyntaxException e1) {
-                e1.printStackTrace();
-            }
-        }catch(Exception e){
-            return ;
-        }
-    }
-    @FXML void delete(){
-        String selected = storage.getSelectionModel().getSelectedItem().toString();
-        storage.getItems().remove(selected);
-    }
-    @FXML void logout(){
-        changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        nowData = app.getCurrent();
+        changeImg(nowData.get("urlToImage"));
     }
 }
