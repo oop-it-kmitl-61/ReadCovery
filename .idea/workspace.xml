@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <list default="true" id="4f7bbd4f-353a-4ab0-9707-e00a4ecc406c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -10,6 +11,14 @@
 =======
     <list default="true" id="4f7bbd4f-353a-4ab0-9707-e00a4ecc406c" name="Default Changelist" comment="" />
 >>>>>>> 83c9ef010f459cdb131d08b64185f1ca6d1fd0ee
+=======
+    <list default="true" id="4f7bbd4f-353a-4ab0-9707-e00a4ecc406c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadCovery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ReadCovery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javafxapplication/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javafxapplication/GuiController.java" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,14 +58,47 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1974055066">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="87" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="87" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javafxapplication/GuiController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="266">
               <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+=======
+            <state relative-caret-position="141">
+              <caret line="169" column="31" selection-start-line="169" selection-start-column="31" selection-end-line="169" selection-end-column="31" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,6 +106,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javafxapplication/Firstpage.fxml">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,6 +140,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
               <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Core/GuiStart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,8 +157,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Core/AppAction.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="375">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+=======
+            <state relative-caret-position="798">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -116,8 +171,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Core/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="350">
               <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+=======
+            <state relative-caret-position="130">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,6 +203,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getC</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -150,10 +215,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Core/test.java" />
-        <option value="$PROJECT_DIR$/src/Core/GuiStart.java" />
         <option value="$PROJECT_DIR$/src/Core/AppAction.java" />
         <option value="$PROJECT_DIR$/src/Core/Main.java" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/javafxapplication/Firstpage.fxml" />
+=======
+        <option value="$PROJECT_DIR$/src/Core/GuiStart.java" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/javafxapplication/GuiController.java" />
       </list>
     </option>
@@ -175,9 +243,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+=======
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,14 +273,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="javafxapplication" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< Updated upstream
             <path>
               <item name="ReadCovery" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
+=======
+>>>>>>> Stashed changes
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,6 +297,18 @@
     <property name="last_opened_file_path" value="D:/Year2/jfoenix-8.0.7.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
 >>>>>>> 83c9ef010f459cdb131d08b64185f1ca6d1fd0ee
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544945273825" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/json-20180813.jar!/" />
+    <property name="project.structure.last.edited" value="Project" />
+>>>>>>> Stashed changes
     <property name="project.structure.proportion" value="0.1488189" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -239,8 +326,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.GuiStart">
+<<<<<<< Updated upstream
     <configuration name="GuiStart (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Core.GuiStart" />
+=======
+    <configuration name="Firstpage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javafxapplication.Firstpage" />
+      <module name="ReadCovery" />
+>>>>>>> Stashed changes
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Core.*" />
@@ -313,10 +406,17 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GuiStart" />
+<<<<<<< Updated upstream
         <item itemvalue="Application.GuiStart (1)" />
         <item itemvalue="Application.Register" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.test" />
+=======
+        <item itemvalue="Application.Register" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.Firstpage" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -330,20 +430,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544878599451</updated>
+      <workItem from="1544944546362" duration="699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="335000" />
+    <option name="totallyTimeSpent" value="1034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.28322148" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
@@ -352,19 +455,32 @@
       <window_info anchor="bottom" id="Messages" order="2" weight="0.32719547" />
 =======
       <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.27919462" />
+=======
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.28322148" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Messages" order="2" visible="true" weight="0.32719547" />
 >>>>>>> 83c9ef010f459cdb131d08b64185f1ca6d1fd0ee
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
       <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32907802" />
+=======
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32719547" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3286119" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -405,6 +521,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -424,6 +543,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/javafxapplication/Register.fxml">
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -432,29 +552,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Core/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/javafxapplication/Firstpage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
+=======
+    <entry file="file://$PROJECT_DIR$/src/javafxapplication/Register.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525" />
+>>>>>>> Stashed changes
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javafxapplication/Firstpage.fxml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="125">
           <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+=======
+        <state relative-caret-position="-1100">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+>>>>>>> Stashed changes
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Core/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/javafxapplication/Register.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="350">
           <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
           <folding>
@@ -467,23 +606,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+=======
+        <state relative-caret-position="50">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Core/GuiStart.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="500">
           <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+=======
+        <state relative-caret-position="298">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core/AppAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javafxapplication/GuiController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="266">
           <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+=======
+        <state relative-caret-position="141">
+          <caret line="169" column="31" selection-start-line="169" selection-start-column="31" selection-end-line="169" selection-end-column="31" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -530,7 +690,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -566,7 +726,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+<<<<<<< Updated upstream
           <last-edited>jfoenix-8.0.7</last-edited>
+=======
+          <last-edited>json-20180813</last-edited>
+>>>>>>> Stashed changes
           <splitter-proportions>
             <option name="proportions">
               <list>
