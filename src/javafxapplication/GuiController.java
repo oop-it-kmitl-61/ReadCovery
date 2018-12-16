@@ -161,6 +161,10 @@ public class GuiController  {
             return ;
         }
     }
+    @FXML void delete(){
+        String selected = storage.getSelectionModel().getSelectedItem().toString();
+        storage.getItems().remove(selected);
+    }
     @FXML void logout(){
         changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");
     }

@@ -118,7 +118,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="del" prefHeight="34.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Delete">
+                  <JFXButton fx:id="del" onAction="#delete" prefHeight="34.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Delete">
                      <font>
                         <Font size="14.0" />
                      </font>
