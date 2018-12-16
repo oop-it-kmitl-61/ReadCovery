@@ -126,10 +126,11 @@ public class GuiController{
     }
     @FXML void save(){
         nowData = app.getCurrent();
-        ObservableList<String> temp = storage.getItems();
-        temp.add(nowData.get("Title"));
-        storage.setItems(temp);
-        System.out.println(storage);
+        System.out.println(nowData);
+//        ObservableList<String> temp = storage.getItems();
+//        temp.add(nowData.get("Title"));
+//        storage.setItems(temp);
+//        System.out.println(storage);
     }
     @FXML void logout(){
         changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");
