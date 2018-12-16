@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class GuiController  {
-    HashMap<String, Integer> saveBox = new HashMap<>();
+    private static HashMap<String, String> saveBox = new HashMap<>();
     private AppAction app = AppAction.getInstance();
     private boolean prev = true;
     private HashMap<String, String> nowData;
@@ -129,11 +129,37 @@ public class GuiController  {
     }
     @FXML void save(){
         nowData = app.getCurrent();
-        System.out.println(nowData);
-//        ObservableList<String> temp = storage.getItems();
-//        temp.add(nowData.get("Title"));
-//        storage.setItems(temp);
-//        System.out.println(storage);
+        String title = nowData.get("title");
+        String url = nowData.get("url");
+        saveBox.put(title, url);
+        System.out.println(saveBox);
+    }
+    @FXML void ReadInList(){
+        for ( String key : saveBox.keySet() ) {
+            int check = 0;
+            for(int i=0;i<storage.getItems().size();i++){
+                if(key.equals(storage.getItems().get(i))){
+                    check = 1;
+                }
+            }
+            if(check == 0){
+                storage.getItems().add(key);
+            }
+        }
+        try{
+            String selected = storage.getSelectionModel().getSelectedItem().toString();
+            Desktop d = Desktop.getDesktop();
+            String url = saveBox.get(selected);
+            try {
+                d.browse(new URI(url));
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            } catch (URISyntaxException e1) {
+                e1.printStackTrace();
+            }
+        }catch(Exception e){
+            return ;
+        }
     }
     @FXML void logout(){
         changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");

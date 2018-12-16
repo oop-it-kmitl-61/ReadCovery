@@ -82,25 +82,7 @@
                </VBox.margin>
                 <items>
                     <FXCollections fx:id="collections" fx:factory="observableArrayList">
-                       <String fx:value="Test" />
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
-                       <!--<String fx:value="Test" />-->
+
                     </FXCollections>
                 </items>
             </JFXListView>
@@ -121,7 +103,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="read" prefHeight="34.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Read">
+                  <JFXButton fx:id="read" onAction="#ReadInList" prefHeight="34.0" prefWidth="1000.0" style="-fx-background-color: #00fcb6;" text="Read">
                      <font>
                         <Font size="14.0" />
                      </font>
