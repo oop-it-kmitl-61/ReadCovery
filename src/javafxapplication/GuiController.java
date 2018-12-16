@@ -57,17 +57,9 @@ public class GuiController{
     }
     @FXML void toMain(ActionEvent e){
         changeScene((Stage)backBtn.getScene().getWindow(), "Firstpage.fxml");
-        nowData = app.getCurrent();
-        System.out.println(nowData.get("urlToImage"));
-        changeImg(nowData.get("urlToImage"));
-        changeHeader(nowData.get("title"));
     }
     @FXML void login(ActionEvent e){
         changeScene((Stage)loginBtn.getScene().getWindow(), "Firstpage.fxml");
-        nowData = app.getCurrent();
-        System.out.println(nowData.get("urlToImage"));
-        changeImg(nowData.get("urlToImage"));
-        changeHeader(nowData.get("title"));
     }
     @FXML void readList(ActionEvent e){
         changeScene((Stage)readListBtn.getScene().getWindow(), "ReadList.fxml");

@@ -136,12 +136,12 @@
          <center>
             <ImageView fx:id="content" fitHeight="343.0" fitWidth="467.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/firstpage/Tae.jpg" />
+                  <Image url="@image/firstpage/default.png" />
                </image>
             </ImageView>
          </center>
          <bottom>
-            <Label fx:id="Header" text="ออกหมายเรียกยูทูบเบอร์ดัง ดัดแปลงปืนยิงพลุ-พลาด ยิงใส่หมา เข้าข่ายทารุณสัตว์" textFill="WHITE" wrapText="true" BorderPane.alignment="TOP_CENTER">
+            <Label fx:id="Header" text="Welcome!" textFill="#00fcb6" wrapText="true" BorderPane.alignment="TOP_CENTER">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
