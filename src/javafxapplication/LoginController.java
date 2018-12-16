@@ -9,8 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,6 +20,7 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
     @FXML private JFXButton loginBtn, toRegister;
     @FXML private JFXTextField userTf;
+    @FXML private Label logErrLb;
     @FXML private JFXPasswordField passwordTf;
 
     @FXML void changeScene(Stage stage, String newScene){
@@ -32,7 +35,11 @@ public class LoginController implements Initializable {
     @FXML void login(ActionEvent e){
         System.out.println(userTf.getText());
         System.out.println(passwordTf.getText());
-        changeScene((Stage)loginBtn.getScene().getWindow(), "MainPage.fxml");
+        if(userTf.getText().equals("")){
+            logErrLb.setText("Error!");
+        }else {
+            changeScene((Stage) loginBtn.getScene().getWindow(), "MainPage.fxml");
+        }
     }
 
     @FXML void toRegisterHandle(ActionEvent e){

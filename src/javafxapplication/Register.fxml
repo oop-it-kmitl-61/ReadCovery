@@ -53,6 +53,11 @@
                   <Font size="19.0" />
                </font>
             </JFXButton>
+            <Label fx:id="regErrLb" textFill="RED">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
          </children>
          <BorderPane.margin>
             <Insets left="80.0" right="80.0" />

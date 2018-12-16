@@ -10,7 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Label;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,8 @@ public class RegisterController implements Initializable {
     @FXML private JFXButton registBtn, backBtn;
     @FXML private JFXTextField regEmailTf,regUserTf;
     @FXML private JFXPasswordField regPassPf,regCpTf;
+    @FXML private Label regErrLb;
+
 
     @FXML void changeScene(Stage stage, String newScene){
         try {
@@ -38,7 +41,9 @@ public class RegisterController implements Initializable {
         System.out.println("User:"+regUserTf.getText());
         System.out.println("Pass:"+regPassPf.getText());
         System.out.println("Confirm-Pass:"+regCpTf.getText());
-        registBtn.setText("wow");
+        if(regEmailTf.getText().equals("")){
+            regErrLb.setText("Error!");
+        }
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
