@@ -30,13 +30,17 @@ public class GuiController{
     private HashMap<String, String> nowData;
     @FXML private JFXButton registBtn, backBtn, toRegister, toProfile, loginBtn;
     @FXML private JFXButton readListBtn, saveListBtn;
-    @FXML private JFXTextField userTf;
-    @FXML private JFXPasswordField passwordTf;
+    @FXML private JFXTextField userTf,regEmailTf,regUserTf;
+    @FXML private JFXPasswordField passwordTf,regPassPf,regCpTf;
     @FXML private ImageView content;
     @FXML private JFXListView storage;
     @FXML private Label Header;
 
     @FXML void registerHandler(ActionEvent event){
+        System.out.println("Email:" +regEmailTf.getText());
+        System.out.println("User:"+regUserTf.getText());
+        System.out.println("Pass:"+regPassPf.getText());
+        System.out.println("Confirm-Pass:"+regCpTf.getText());
         registBtn.setText("wow");
     }
 
