@@ -52,6 +52,7 @@ public class ProfileController implements Initializable {
         }
         if(entertainment.isSelected()){
             System.out.print("Entertainment ");
+        }
         if(technology.isSelected()){
             System.out.print("Technology ");
         }
