@@ -65,13 +65,9 @@ public class GuiController{
     @FXML void login(ActionEvent e){
         changeScene((Stage)loginBtn.getScene().getWindow(), "Firstpage.fxml");
         nowData = app.getCurrent();
-<<<<<<< Updated upstream
         System.out.println(nowData.get("urlToImage"));
         changeImg(nowData.get("urlToImage"));
         changeHeader(nowData.get("title"));
-=======
-        changeImg(nowData.get("urlToImage"));
->>>>>>> Stashed changes
     }
     @FXML void readList(ActionEvent e){
         changeScene((Stage)readListBtn.getScene().getWindow(), "ReadList.fxml");
