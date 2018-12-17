@@ -20,6 +20,7 @@ public class LoginController implements Initializable {
     @FXML private JFXTextField userTf;
     @FXML private Label logErrLb;
     @FXML private JFXPasswordField passwordTf;
+    private String errMsg;
 
     @FXML void changeScene(Stage stage, String newScene){
         try {
@@ -34,9 +35,17 @@ public class LoginController implements Initializable {
         System.out.println(userTf.getText());
         System.out.println(passwordTf.getText());
         if(userTf.getText().equals("")){
-            logErrLb.setText("Error!");
-        }else {
+            errMsg += "Username is empty\n";
+        }
+        if(passwordTf.getText().equals("")){
+            errMsg += "Password is empty\n";
+        }
+        if(errMsg.equals("")){
             changeScene((Stage) loginBtn.getScene().getWindow(), "MainPage.fxml");
+        }
+        else {
+            logErrLb.setText(errMsg);
+            errMsg="";
         }
     }
 
@@ -45,6 +54,7 @@ public class LoginController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        //set errMsg empty when init this page
+        errMsg="";
     }
 }
