@@ -38,7 +38,7 @@ public class GuiStart extends Application{
         app.setNewsList(apiData);
 //        app.setSelects(apiData);
 //        app.prepInstance();
-        Parent root = FXMLLoader.load(getClass().getResource("../javafxapplication/Loginjfoenix.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/javafxapplication/Loginjfoenix.fxml"));
         
         Scene scene = new Scene(root);
         stage.setTitle("Login");
