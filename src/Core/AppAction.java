@@ -45,7 +45,6 @@ public class AppAction {
     }
 
     public void next(){
-        newsList.remove(current);
         int randomIndex = rand.nextInt(newsList.size());
         HashMap random = newsList.get(randomIndex);
         prevStack.add(current);
