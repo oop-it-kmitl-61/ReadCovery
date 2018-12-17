@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -48,7 +47,7 @@ public class ReadListController implements Initializable {
                 e1.printStackTrace();
             }
         }catch(Exception e){
-            return ;
+            e.printStackTrace();
         }
     }
     @FXML void saveList(ActionEvent e){
