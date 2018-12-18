@@ -56,8 +56,29 @@ public class ApiUtil {
         } finally {
             con.disconnect();
         }
+    }
+    public static JSONObject callJson(String urll)throws MalformedURLException, ProtocolException, IOException{
+        try {
+            URL myurl = new URL(urll);
+            con = (HttpURLConnection) myurl.openConnection();
 
+            con.setRequestMethod("GET");
 
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+            return strToJson(content.toString());
+
+        } finally {
+            con.disconnect();
+        }
     }
 
     public static JSONObject strToJson(String s) {
@@ -99,17 +120,7 @@ public class ApiUtil {
         return temp;
     }
 
-    public static ArrayList<String> getArticleTitle(JSONArray ja) {
-        ArrayList<String> temp = new ArrayList<>();
 
-        for (int i = 0; i < ja.length(); i++) {
-            for (int j = 0; j < ja.getJSONArray(i).length(); j++) {
-                temp.add(ja.getJSONArray(i).getJSONObject(j).getString("title"));
-//                System.out.println(ja.getJSONArray(i).getJSONObject(j).getString("title"));
-            }
-        }
-        return temp;
-    }
     public static String loginRequest(String email, String password) throws IOException{
         URL url = new URL("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/auth");
         Map<String, Object> params = new LinkedHashMap<>();
@@ -251,5 +262,10 @@ public class ApiUtil {
             con.disconnect();
         }
     }
-
+    public static ArrayList<HashMap> getReadList() throws Exception{
+        String url = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/history?token="+token;
+        JSONObject jo = callJson(url);
+//        jo.getJSONArray();
+        return null;
+    }
 }
