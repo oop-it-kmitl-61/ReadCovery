@@ -40,11 +40,6 @@
                </VBox.margin>
             </Label>
             <JFXPasswordField fx:id="regCpTf" style="-fx-text-fill: white;" />
-            <Label fx:id="regErrLb" textFill="RED">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Label>
             <VBox>
                <children>
                   <Label text="Favorite" textFill="#00fcb6">
@@ -82,6 +77,11 @@
                   <Insets />
                </VBox.margin>
             </VBox>
+            <Label fx:id="regErrLb" textFill="RED">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
          </children>
          <BorderPane.margin>
             <Insets left="80.0" right="80.0" />
