@@ -144,13 +144,25 @@ public class ApiUtil {
 
     public static JSONArray getSelectedArticles(String[] cats) throws Exception {
         JSONArray artPool = new JSONArray();
-
-
-        for (int i = 0; i < cats.length; i++) {
-            cat = cats[i];
-            url = base_url + cat +"?token=" + token;
-            System.out.println(url);
-            artPool.put(callAPI().getJSONArray("articles"));
+        boolean isRandom = false;
+        for(String cat : cats){
+            if(cat.equals("Random")){
+                isRandom = true;
+            }
+        }
+        if(isRandom){
+            for (int i = 0; i < cats.length; i++) {
+                cat = cats[i];
+                url = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/article/all?token="+token;
+                artPool.put(callAPI().getJSONArray("articles"));
+            }
+        }else{
+            for (int i = 0; i < cats.length; i++) {
+                cat = cats[i];
+                url = base_url + cat +"?token=" + token;
+                System.out.println(url);
+                artPool.put(callAPI().getJSONArray("articles"));
+            }
         }
         return artPool;
     }

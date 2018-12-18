@@ -59,10 +59,11 @@ public class LoginController implements Initializable {
         }
 
         if(errMsg.equals("")){
-            String[] select = new String[5];
-            select[0] = "political";
+
+            ApiUtil.setToken(token);
+            String[] select = ApiUtil.getUserCat().split(",");
+
             JSONArray data = api.getSelectedArticles(select);
-            api.setToken(token);
             ArrayList<HashMap> apiData = api.getData(data);
             app = AppAction.getInstance();
             app.setNewsList(apiData);
