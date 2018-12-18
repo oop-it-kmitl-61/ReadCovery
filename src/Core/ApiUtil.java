@@ -119,7 +119,7 @@ public class ApiUtil {
                     content.append(System.lineSeparator());
                 }
             }
-//            System.out.println(content.toString());
+            System.out.println(content.toString());
             return strToJson(content.toString());
 
         } finally {
@@ -264,6 +264,44 @@ public class ApiUtil {
         }
     }
 
+    public static String updateCat(String cat) throws Exception{
+        URL url = new URL("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/category/update?token="+token);
+        Map<String, Object> params = new LinkedHashMap<>();
+        params.put("category", cat);
+        StringBuilder postData = new StringBuilder();
+        for (Map.Entry<String, Object> param : params.entrySet()) {
+            if (postData.length() != 0) postData.append('&');
+            postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+            postData.append('=');
+            postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
+        }
+        byte[] postDataBytes = postData.toString().getBytes("UTF-8");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+        conn.setDoOutput(true);
+        conn.getOutputStream().write(postDataBytes);
+
+        Reader in;
+        try {
+            in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+            StringBuilder data = new StringBuilder();
+            for (int c; (c = in.read()) >= 0; ) {
+                data.append((char) c);
+            }
+            String intentData = data.toString();
+
+            if (conn.getResponseCode() == 200) {
+                return "Yes";
+            }else {
+                return null;
+            }
+        }catch (Exception ex){
+            return null;
+        }
+
+    }
     public static void setToken(String e) {
         token=e;
     }
@@ -275,7 +313,7 @@ public class ApiUtil {
         try {
             String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/read/save/"+id+"?token="+token;
             System.out.println(tempUrl);
-            URL myurl = new URL(url);
+            URL myurl = new URL(tempUrl);
             con = (HttpURLConnection) myurl.openConnection();
 
             con.setRequestMethod("GET");
@@ -288,7 +326,7 @@ public class ApiUtil {
                     content.append(line);
                     content.append(System.lineSeparator());
                 }
-            }
+            }catch (Exception xe){xe.printStackTrace();}
 //            System.out.println(content.toString());
 //            return strToJson(content.toString());
 
@@ -302,7 +340,7 @@ public class ApiUtil {
         try {
             String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/read/"+id+"?token="+token;
             System.out.println(tempUrl);
-            URL myurl = new URL(url);
+            URL myurl = new URL(tempUrl);
             con = (HttpURLConnection) myurl.openConnection();
 
             con.setRequestMethod("GET");

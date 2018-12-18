@@ -59,14 +59,7 @@ public class LoginController implements Initializable {
         }
 
         if(errMsg.equals("")){
-
             ApiUtil.setToken(token);
-            String[] select = ApiUtil.getUserCat().split(",");
-
-            JSONArray data = api.getSelectedArticles(select);
-            ArrayList<HashMap> apiData = api.getData(data);
-            app = AppAction.getInstance();
-            app.setNewsList(apiData);
             changeScene((Stage) loginBtn.getScene().getWindow(), "MainPage.fxml");
         }
         else {

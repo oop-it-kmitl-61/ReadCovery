@@ -1,5 +1,6 @@
 package javafxapplication;
 
+import Core.ApiUtil;
 import Core.AppAction;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -12,12 +13,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.json.JSONArray;
 
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -107,7 +110,17 @@ public class MainController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nowData = app.getCurrent();
+        try {
+            String[] select = ApiUtil.getUserCat().split(",");
+            JSONArray data = ApiUtil.getSelectedArticles(select);
+            System.out.println("Data length: " + data.length());
+            ArrayList<HashMap> apiData = ApiUtil.getData(data);
+            app = AppAction.getInstance();
+            app.setNewsList(apiData);
+            nowData = app.getCurrent();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         if(nowData == null){
             changeImg("/javafxapplication/image/firstpage/cat.jpg");
             changeHeader("You read all");
