@@ -83,15 +83,15 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
 
 |  | ชื่อ | รหัสนักศึกษา
 | ------ | ------ | ------ |
-|![Fluk](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Fluke.png =100x20 "นายพงศธร กิตติวรปัญญา") | นายพงศธร กิตติวรปัญญา | 60070055
-| ![Net](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Net.png =100x20"นายพิชญพล เพชรบุญช่วย ") | นายพิชญพล เพชรบุญช่วย | 60070062
-| ![Gunn](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Gunn.png =100x20"นายพุฒิเมธ ธรรมแสง") | นายพุฒิเมธ ธรรมแสง | 60070068
+|![Fluk](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Fluke.png =250x) | นายพงศธร กิตติวรปัญญา | 60070055
+| ![Net](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Net.png =250x) | นายพิชญพล เพชรบุญช่วย | 60070062
+| ![Gunn](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Gunn.png =250x) | นายพุฒิเมธ ธรรมแสง | 60070068
 
 
 ### Assistant Professor
 | ผศ.ดร. ธนิศา นุ่มนนท์  |
 | ------ |
-| ![Professor](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Professor.png =100x20)
+| ![Professor](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Professor.png =250x)
 
 รายงานนี้เป็นส่วนหนึ่งของวิชา OBJECT-ORIENTED PROGRAMMING (รหัส 06016317)
 คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
