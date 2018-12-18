@@ -1,6 +1,5 @@
 package Core;
 
-import jdk.nashorn.internal.parser.Token;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -56,14 +55,87 @@ public class ApiUtil {
         } finally {
             con.disconnect();
         }
+    }
+    public static JSONObject callAPI(String urll) throws MalformedURLException, ProtocolException, IOException {
+        try {
 
+            URL myurl = new URL(urll);
+            con = (HttpURLConnection) myurl.openConnection();
 
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+            return strToJson(content.toString());
+
+        } finally {
+            con.disconnect();
+        }
+    }
+    public static JSONArray callJsonArray(String urll)throws MalformedURLException, ProtocolException, IOException{
+        try {
+            URL myurl = new URL(urll);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+            return strToJsonArr(content.toString());
+
+        } finally {
+            con.disconnect();
+        }
+    }
+    public static JSONObject callJson(String urll)throws MalformedURLException, ProtocolException, IOException{
+        try {
+            URL myurl = new URL(urll);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+            return strToJson(content.toString());
+
+        } finally {
+            con.disconnect();
+        }
     }
 
     public static JSONObject strToJson(String s) {
         JSONObject jo = new JSONObject(s);
         return jo;
     }
+    public static JSONArray strToJsonArr(String s) {
+        JSONArray jo = new JSONArray(s);
+        return jo;
+    }
+
 
     public static void setCat(String cat) {
         url = base_url + cat +"?token=" + token;
@@ -99,17 +171,7 @@ public class ApiUtil {
         return temp;
     }
 
-    public static ArrayList<String> getArticleTitle(JSONArray ja) {
-        ArrayList<String> temp = new ArrayList<>();
 
-        for (int i = 0; i < ja.length(); i++) {
-            for (int j = 0; j < ja.getJSONArray(i).length(); j++) {
-                temp.add(ja.getJSONArray(i).getJSONObject(j).getString("title"));
-//                System.out.println(ja.getJSONArray(i).getJSONObject(j).getString("title"));
-            }
-        }
-        return temp;
-    }
     public static String loginRequest(String email, String password) throws IOException{
         URL url = new URL("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/auth");
         Map<String, Object> params = new LinkedHashMap<>();
@@ -223,5 +285,55 @@ public class ApiUtil {
         }finally {
             con.disconnect();
         }
+    }
+    public static void readId(String id){
+        try {
+            String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/read/"+id+"?token="+token;
+            System.out.println(tempUrl);
+            URL myurl = new URL(url);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+//            return strToJson(content.toString());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            con.disconnect();
+        }
+    }
+    public static HashMap<String, String> getReadList() throws Exception{
+        HashMap<String, String> temp = new HashMap<>();
+        String url = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/history?token="+token;
+        JSONArray ja = callAPI(url).getJSONArray("articles");
+        for(int i=0;i<ja.length();i++){
+            temp.put(ja.getJSONObject(i).getString("title"), ja.getJSONObject(i).getString("url"));
+        }
+        return temp;
+    }
+
+    public static String getUserCat() throws MalformedURLException, ProtocolException, IOException{
+        JSONArray ja = callJsonArray("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/category?token="+token);
+
+        String temp ="";
+        for(int i=0;i<ja.length();i++){
+            if(i==0){
+                temp = ja.get(i).toString();
+            }else{
+                temp += ","+ja.get(i).toString();
+            }
+        }
+        return temp;
     }
 }

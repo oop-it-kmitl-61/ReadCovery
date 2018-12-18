@@ -40,9 +40,13 @@ public class AppAction {
 
     public void setNewsList(ArrayList<HashMap> newsList) {
         this.newsList = newsList;
-        int randomIndex = rand.nextInt(newsList.size());
-        this.current = newsList.get(randomIndex);
-        newsList.remove(current);
+        if(this.newsList.size()!= 0) {
+            int randomIndex = rand.nextInt(newsList.size());
+            this.current = newsList.get(randomIndex);
+            newsList.remove(current);
+        }else{
+            System.out.println("You read all");
+        }
     }
 
     public void next(){
@@ -66,10 +70,11 @@ public class AppAction {
     public void save(){
         ApiUtil.saveId(current.get("id").toString());
         newsList.remove(current);
-        saveBox.put(current.get("title").toString(), current.get("url").toString());
+//        saveBox.put(current.get("title").toString(), current.get("url").toString());
     }
     public void read(String title, String url){
-        readBox.put(title, url);
+        ApiUtil.readId(current.get("id").toString());
+//        readBox.put(title, url);
     }
     public ArrayList<HashMap> getNewsList(){
         return this.newsList;

@@ -1,5 +1,6 @@
 package javafxapplication;
 
+import Core.ApiUtil;
 import Core.AppAction;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -60,18 +61,23 @@ public class ReadListController implements Initializable {
         changeScene((Stage)backBtn.getScene().getWindow(), "MainPage.fxml");
     }
     public void initialize(URL location, ResourceBundle resources) {
-        readBox = app.getreadBox();
-        System.out.println(readBox);
-        for ( String key : readBox.keySet() ) {
-            int check = 0;
-            for(int i=0;i<history.getItems().size();i++){
-                if(key.equals(history.getItems().get(i))){
-                    check = 1;
+//        readBox = app.getreadBox();
+        try {
+            readBox = ApiUtil.getReadList();
+            System.out.println(readBox);
+            for (String key : readBox.keySet()) {
+                int check = 0;
+                for (int i = 0; i < history.getItems().size(); i++) {
+                    if (key.equals(history.getItems().get(i))) {
+                        check = 1;
+                    }
+                }
+                if (check == 0) {
+                    history.getItems().add(key);
                 }
             }
-            if(check == 0){
-                history.getItems().add(key);
-            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

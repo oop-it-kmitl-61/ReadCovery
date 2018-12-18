@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
         }
 
         if(errMsg.equals("")){
-            String[] select = new String[2];
+            String[] select = new String[5];
             select[0] = "political";
             JSONArray data = api.getSelectedArticles(select);
             api.setToken(token);
