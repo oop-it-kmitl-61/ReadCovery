@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
     private static final String API ="3249e937bdde4f27bc283ab7219b1142";
-    private static ApiUtil api;
+
     private static JSONArray articles;
     private static JSONArray data_pool;
 
