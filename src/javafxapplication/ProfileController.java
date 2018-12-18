@@ -16,8 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ProfileController implements Initializable {
-    @FXML private JFXTextField emlTf;
-    @FXML private JFXPasswordField pswTf;
+    @FXML private JFXTextField nameTf;
     @FXML public JFXButton backBtn, logoutBtn, settingBtn;
     @FXML private JFXCheckBox random, political, sport, entertainment, technology;
     @FXML void changeScene(Stage stage, String newScene){
@@ -36,8 +35,7 @@ public class ProfileController implements Initializable {
         changeScene((Stage)logoutBtn.getScene().getWindow(), "Loginjfoenix.fxml");
     }
     @FXML void setting(){
-        System.out.println("Email : "+emlTf.getText());
-        System.out.println("Password : "+pswTf.getText());
+        System.out.println("Name : "+nameTf.getText());
         System.out.print("Favorite : ");
         if(random.isSelected()){
             System.out.print(random.getText()+" ");
@@ -57,8 +55,7 @@ public class ProfileController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        emlTf.setText("OOP6969@it.kmitl.ac.th");
-        pswTf.setText("6969");
+        nameTf.setText("OOP");
         random.setSelected(true);
         sport.setSelected(true);
         technology.setSelected(true);
