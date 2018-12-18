@@ -1,5 +1,7 @@
 # Readcovery
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)  
+### ไฟล์ .jar อยู่ใน release
+***
 ReadCovery เป็นโปรแกรมที่ช่วยในการแนะนำบทความที่น่าสนใจโดยสามารถเลือกหมวดหมู่ที่ชอบได้ ทำให้เราสามารถอ่านบทความในหมวดหมู่ที่เราสนใจได้อย่างง่ายดาย
 โดยหมวดหมู่ที่ผู้ใช้งานสามารถเลือกได้จะมีดังนี้
 
