@@ -52,7 +52,7 @@ public class ReadListController implements Initializable {
         }
     }
     @FXML void saveList(ActionEvent e){
-        changeScene((Stage)saveListBtn.getScene().getWindow(), "SaveList.fxml");
+        changeScene((Stage)saveListBtn.getScene().getWindow(), "/javafxapplication/SaveList.fxml");
     }
     @FXML void toProfile(ActionEvent e){
         changeScene((Stage)toProfile.getScene().getWindow(), "Profile.fxml");
