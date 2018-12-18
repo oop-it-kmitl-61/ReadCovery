@@ -1,5 +1,6 @@
 package javafxapplication;
 
+import Core.ApiUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -55,9 +56,22 @@ public class ProfileController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nameTf.setText("OOP");
-        random.setSelected(true);
-        sport.setSelected(true);
-        technology.setSelected(true);
+        String name ="";
+        try {
+            String[] cats = ApiUtil.getUserCat().split(",");
+            for(String cat: cats){
+                if(cat.equals("Random")) random.setSelected(true);
+                if(cat.equals("Political")) political.setSelected(true);
+                if(cat.equals("Sport")) sport.setSelected(true);
+                if(cat.equals("Entertainment")) entertainment.setSelected(true);
+                if(cat.equals("Technology")) technology.setSelected(true);
+            }
+            nameTf.setText("OOP");
+            random.setSelected(true);
+            sport.setSelected(true);
+            technology.setSelected(true);
+        }catch (Exception e){
+
+        }
     }
 }
