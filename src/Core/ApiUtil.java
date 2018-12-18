@@ -1,5 +1,6 @@
 package Core;
 
+import jdk.nashorn.internal.parser.Token;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,15 +17,16 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ApiUtil {
-    //http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/article/category/political
+    //http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/article/category/political?token=
 
     private static String API = "&apiKey=" + "3249e937bdde4f27bc283ab7219b1142";
-    private static String cat = "business";
-    private static String base_url = "https://newsapi.org/v2/top-headlines?country=us&category=";
-    private static String url = base_url + cat + API;
+    private static String cat = "political";
+    private static String base_url = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/article/category/";
     private static HttpURLConnection con;
     private static String token = "";
     private static StringBuilder content;
+    private static String url = base_url + cat +"?token=" + token;
+
 
     public ApiUtil() {
 
@@ -64,14 +66,18 @@ public class ApiUtil {
     }
 
     public static void setCat(String cat) {
-        cat = cat;
-        url = base_url + cat + API;
+        url = base_url + cat +"?token=" + token;
+
     }
 
     public static JSONArray getSelectedArticles(String[] cats) throws Exception {
         JSONArray artPool = new JSONArray();
+
+
         for (int i = 0; i < cats.length; i++) {
             cat = cats[i];
+            url = base_url + cat +"?token=" + token;
+            System.out.println(url);
             artPool.put(callAPI().getJSONArray("articles"));
         }
         return artPool;
@@ -189,5 +195,31 @@ public class ApiUtil {
 
     public static String getToken() {
         return token;
+    }
+    public static void saveId(String id){
+        try {
+            String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/save/"+id;
+            URL myurl = new URL(url);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+//            return strToJson(content.toString());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            con.disconnect();
+        }
     }
 }

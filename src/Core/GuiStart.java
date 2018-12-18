@@ -29,13 +29,7 @@ public class GuiStart extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        String[] select = new String[2];
-        select[0] = "business";
-        select[1] = "science";
-        JSONArray data = api.getSelectedArticles(select);
-        ArrayList<HashMap> apiData = api.getData(data);
-        app = AppAction.getInstance();
-        app.setNewsList(apiData);
+
 //        app.setSelects(apiData);
 //        app.prepInstance();
         Parent root = FXMLLoader.load(getClass().getResource("/javafxapplication/Loginjfoenix.fxml"));
