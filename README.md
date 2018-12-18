@@ -23,8 +23,15 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
    ```
    java -jar Readcovery.jar
    ```
-  เพื่อเปิดโปรแกรม
-  
+  เพื่อเปิดโปรแกรม  
+  หากเปิดโปรแกรมแล้วไม่สามารถอ่านภาษาไทยได้ ให้ไปตั้งค่าที่ Advanced system settings >> Environment Variables  
+  จากนั้นด้านล่างในส่วนของ System Variables ให้ทำการกด New จากนั้นให้ใส่คำสั่งตามภาพด้านล่าง  
+  ```
+   JAVA_TOOL_OPTIONS
+   -Dfile.encoding=UTF8
+   ```
+  ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/setting.png)  
+  จากนั้นกด OK แล้วให้ทำการเปิด cmd ใหม่ และรันโปรแกรมอีกครั้ง  
   ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Login.png)    
   เมื่อเปิดขึ้นมาแล้วจะพบกับหน้า Login หากมีบัญชีผู้ใช้แล้วสามารถใช้ Email และ Password เข้าใช้ได้ทันที  
   แต่หากยังไม่มีบัญชีให้ทำการสมัครที่ปุ่ม Register    
