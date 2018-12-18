@@ -33,8 +33,6 @@ public class LoginController implements Initializable {
         }
     }
     @FXML void login(ActionEvent e){
-//        System.out.println(emailTf.getText());
-//        System.out.println(passwordTf.getText());
         if(emailTf.getText().equals("")){
             errMsg += "Email is empty\n";
         }

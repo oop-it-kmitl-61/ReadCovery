@@ -73,9 +73,6 @@ public class RegisterController implements Initializable {
         }
         //if not err
         if(errMsg.equals("")){
-            regErrLb.setTextFill(Color.GREEN);
-            regErrLb.setText("Register Success!");
-            errMsg="";
             String cat = "";
 
             if (random.isSelected()) {
@@ -96,6 +93,23 @@ public class RegisterController implements Initializable {
                 cat = catAppend(cat,technology.getText());
             }
 //            System.out.println(cat);
+            Boolean regis=false;
+            try {
+
+                regis = ApiUtil.regisRequest(regEmailTf.getText(), regNameTf.getText(), regPassPf.getText(), cat);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+            if(regis){
+                regErrLb.setTextFill(Color.GREEN);
+                regErrLb.setText("Register Success!");
+                errMsg="";
+            }else{
+                errMsg="Register failed!";
+                regErrLb.setTextFill(Color.RED);
+                regErrLb.setText(errMsg);
+                errMsg="";
+            }
         }else{
             regErrLb.setTextFill(Color.RED);
             regErrLb.setText(errMsg);
