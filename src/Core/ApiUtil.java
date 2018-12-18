@@ -224,4 +224,32 @@ public class ApiUtil {
             con.disconnect();
         }
     }
+    public static void readId(String id){
+        try {
+            String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/read/"+id+"?token="+token;
+            System.out.println(tempUrl);
+            URL myurl = new URL(url);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+//            return strToJson(content.toString());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            con.disconnect();
+        }
+    }
+
 }

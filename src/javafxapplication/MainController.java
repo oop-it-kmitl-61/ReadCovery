@@ -108,7 +108,12 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         nowData = app.getCurrent();
-        changeImg(nowData.get("urlToImage"));
-        changeHeader(nowData.get("title"));
+        if(nowData == null){
+            changeImg("/javafxapplication/image/firstpage/cat.jpg");
+            changeHeader("You read all");
+        }else {
+            changeImg(nowData.get("urlToImage"));
+            changeHeader(nowData.get("title"));
+        }
     }
 }
