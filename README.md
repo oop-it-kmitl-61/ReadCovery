@@ -1,4 +1,4 @@
-# 📖 Readcovery
+# 📖 ReadCovery
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)  
 ### ไฟล์ [.jar](https://github.com/oop-it-kmitl-61/ReadCovery/releases/download/Final/ReadCovery.jar) อยู่ใน release
 ***
@@ -10,6 +10,8 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
   - Sport บทความด้านกีฬา
   - Entertainment บทความด้านความบันเทิง
   - Technology บทความด้านเทคโนโลยี
+ 
+*สำหรับ ReadCovery Server [คลิก](https://github.com/oop-it-kmitl-61/ReadCovery-Server)*
 ## Library ที่ใช้
   - [JFoenix](https://github.com/jfoenixadmin/JFoenix) เป็น Library GUI component บน JavaFX ช่วยให้การออกแบบง่ายขึ้น
   - [Json - Java](https://github.com/stleary/JSON-java) เป็น Library ที่ใช้ในการจัดการ JSON บนภาษา Java
