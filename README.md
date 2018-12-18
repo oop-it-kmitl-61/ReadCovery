@@ -12,6 +12,8 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
   - [JFoenix](https://github.com/jfoenixadmin/JFoenix) เป็น Library GUI component บน JavaFX ช่วยให้การออกแบบง่ายขึ้น
   - [Json - Java](https://github.com/stleary/JSON-java) เป็น Library ที่ใช้ในการจัดการ JSON บนภาษา Java
   
+  ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Working.png)    
+
 > โดยโปรแกรมจะมี 2 ฝั่งคือ ฝั่ง Server และ Client โดยรูปแบบข้อมูลที่สื่อสารกันเป็นรูปแบบ JSON โดยฝั่ง Server จะติดต่อกับระบบฐานข้อมูล MySQL อีกต่อหนึ่ง โดย Client นั้น ใช้ JavaFX ในการพัฒนาระบบ User Interface และฝั่ง Server ใช้ Spring Boot ในการพัฒนา
  ## วิธีการใช้งาน
 
