@@ -322,6 +322,16 @@ public class ApiUtil {
         }
         return temp;
     }
+    public static HashMap<String, String> getSaveList() throws Exception{
+        HashMap<String, String> temp = new HashMap<>();
+        String url = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/getsave?token="+token;
+        System.out.println(url);
+        JSONArray ja = callAPI(url).getJSONArray("articles");
+        for(int i=0;i<ja.length();i++){
+            temp.put(ja.getJSONObject(i).getString("title"), ja.getJSONObject(i).getString("url"));
+        }
+        return temp;
+    }
 
     public static String getUserCat() throws MalformedURLException, ProtocolException, IOException{
         JSONArray ja = callJsonArray("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/category?token="+token);
