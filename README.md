@@ -43,11 +43,13 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
 หรือหากยังไม่ต้องการอ่านทันที แต่ต้องการเก็บไว้อ่านในภายหลัง ให้กดที่ปุ่ม Save
 เพื่อเก็บเอาไว้อ่านในภายหลัง    
 ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/saveList.png)    
-บทความที่ถูกบันทึกไว้จะเข้าไปอยู่ใน SaveList ซึ่งสามารถเข้าถึงได้ที่ปุ่ม SaveList ด้านบน  
+บทความที่ถูกบันทึกไว้จะเข้าไปอยู่ใน SaveList ซึ่งสามารถเข้าถึงได้ที่ปุ่ม SaveList ด้านบน    
+![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadInSaveList.png)    
 หากต้องการอ่านให้คลิกที่ชื่อบทความแล้วกดที่ปุ่ม Read เพื่อทำการอ่าน    
  ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadList.png)    
 บทความที่เคยอ่านไปแล้วทั้งหมดจะปรากฏอยู่ที่ ReadList ซึ่งอยู่ด้านบนเช่นเดียวกัน
-หากต้องการอ่านอีกครั้งให้กดที่ชื่อบทความแล้วกด Read Again    
+![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadAgain.png)    
+หากต้องการอ่านอีกครั้งให้กดที่ชื่อบทความแล้วกดปุ่ม Read Again    
 ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/edit.png)    
 สามารถเข้ามาเปลี่ยนหมวดหมู่ที่ชอบได้ที่ปุ่ม Profile ด้านบน เมื่อเปลี่ยนเสร็จแล้วให้กดที่ Save Setting  
 หรือหากต้องการออกจากระบบให้กดที่ปุ่ม Logout ด้านล่าง    
