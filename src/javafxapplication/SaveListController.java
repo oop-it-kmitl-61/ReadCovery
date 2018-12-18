@@ -1,5 +1,6 @@
 package javafxapplication;
 
+import Core.ApiUtil;
 import Core.AppAction;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -34,7 +35,8 @@ public class SaveListController implements Initializable {
     }
     @FXML void ReadInList(){
         try{
-            saveBox = app.getsaveBox();
+//            saveBox = app.getsaveBox();
+            saveBox = ApiUtil.getSaveList();
             String selected = storage.getSelectionModel().getSelectedItem().toString();
             Desktop d = Desktop.getDesktop();
             String url = saveBox.get(selected);
@@ -70,18 +72,23 @@ public class SaveListController implements Initializable {
         }
     }
     public void initialize(URL location, ResourceBundle resources) {
-        saveBox = app.getsaveBox();
-        System.out.println(saveBox);
-        for ( String key : saveBox.keySet() ) {
-            int check = 0;
-            for(int i=0;i<storage.getItems().size();i++){
-                if(key.equals(storage.getItems().get(i))){
-                    check = 1;
+//        saveBox = app.getsaveBox();
+        try {
+            saveBox = ApiUtil.getSaveList();
+            System.out.println(saveBox);
+            for (String key : saveBox.keySet()) {
+                int check = 0;
+                for (int i = 0; i < storage.getItems().size(); i++) {
+                    if (key.equals(storage.getItems().get(i))) {
+                        check = 1;
+                    }
+                }
+                if (check == 0) {
+                    storage.getItems().add(key);
                 }
             }
-            if(check == 0){
-                storage.getItems().add(key);
-            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
