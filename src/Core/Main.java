@@ -49,9 +49,10 @@ public class Main {
 //        a[0]="Business";
 //        Boolean res = ApiUtil.regisRequest("sss","eieie","123","Business");
 
-            String res = ApiUtil.loginRequest("aa", "aa");
+            String res = ApiUtil.loginRequest("a", "a");
         ApiUtil.setToken(res);
-        System.out.println(ApiUtil.getUserCat());
+        ApiUtil.getReadList();
+//        System.out.println(ApiUtil.getUserCat());
 
     }
 }

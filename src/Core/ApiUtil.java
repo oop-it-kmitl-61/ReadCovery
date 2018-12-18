@@ -56,6 +56,30 @@ public class ApiUtil {
             con.disconnect();
         }
     }
+    public static JSONObject callAPI(String urll) throws MalformedURLException, ProtocolException, IOException {
+        try {
+
+            URL myurl = new URL(urll);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+            return strToJson(content.toString());
+
+        } finally {
+            con.disconnect();
+        }
+    }
     public static JSONArray callJsonArray(String urll)throws MalformedURLException, ProtocolException, IOException{
         try {
             URL myurl = new URL(urll);
@@ -289,11 +313,14 @@ public class ApiUtil {
             con.disconnect();
         }
     }
-    public static ArrayList<HashMap> getReadList() throws Exception{
+    public static HashMap<String, String> getReadList() throws Exception{
+        HashMap<String, String> temp = new HashMap<>();
         String url = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/history?token="+token;
-        JSONObject jo = callJson(url);
-//        jo.getJSONArray();
-        return null;
+        JSONArray ja = callAPI(url).getJSONArray("articles");
+        for(int i=0;i<ja.length();i++){
+            temp.put(ja.getJSONObject(i).getString("title"), ja.getJSONObject(i).getString("url"));
+        }
+        return temp;
     }
 
     public static String getUserCat() throws MalformedURLException, ProtocolException, IOException{
