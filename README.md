@@ -54,3 +54,48 @@
 
 ​	เป็น Library GUI component บน JavaFX ช่วยให้การออกแบบง่ายขึ้น
 
+
+# Readcovery
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+ReadCovery เป็นโปรแกรมที่ช่วยในการแนะนำบทความที่น่าสนใจโดยสามารถเลือกหมวดหมู่ที่ชอบได้ ทำให้เราสามารถอ่านบทความในหมวดหมู่ที่เราสนใจได้อย่างง่ายดาย
+โดยหมวดหมู่ที่ผู้ใช้งานสามารถเลือกได้จะมีดังนี้
+
+  - Random เป็นการสุ่มจากบทความทั้งหมด
+  - Political บทความด้านการเมือง
+  - Sport บทความด้านกีฬา
+  - Entertainment บทความด้านความบันเทิง
+  - Technology บทความด้านเทคโนโลยี
+  ## Library ที่ใช้
+  - [JFoenix](https://github.com/jfoenixadmin/JFoenix) เป็น Library GUI component บน JavaFX ช่วยให้การออกแบบง่ายขึ้น
+  - [Json - Java](https://github.com/stleary/JSON-java) เป็น Library ที่ใช้ในการจัดการ JSON บนภาษา Java
+ ## วิธีการใช้งาน
+
+  สามารถเรียกใช้โปรแกรมได้โดยใช้ JDK  เวอร์ชัน 1.8 และทำการดับเบิ้ลคลิกที่ไฟล์ Readcovery.jar 
+  หากไม่มีอะไรเกิดขึ้นให้ทำการเปิดไฟล์ด้วย Command โดยเข้าไปที่ cmd แล้วเข้าไปที่โฟลเดอร์ของไฟล์
+  จากนั้นพิมพ์คำสั่ง
+   ```
+   java -jar Readvocery.jar
+   ```
+  เพื่อเปิดโปรแกรม
+  
+
+### ผู้จัดทำ
+
+|  | ชื่อ | รหัสนักศึกษา
+| ------ | ------ | ------ |
+|![Fluk](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Fluke.png "นายพงศธร กิตติวรปัญญา") | นายพงศธร กิตติวรปัญญา | 60070055
+| ![Net](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Net.png "นายพิชญพล เพชรบุญช่วย ") | นายพิชญพล เพชรบุญช่วย | 60070062
+| ![Gunn](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Gunn.png "นายพุฒิเมธ ธรรมแสง") | นายพุฒิเมธ ธรรมแสง | 60070068
+
+
+### Assistant Professor
+| ผศ.ดร. ธนิศา นุ่มนนท์  |
+| ------ |
+| ![Professor](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Professor.png)
+
+รายงานนี้เป็นส่วนหนึ่งของวิชา OBJECT-ORIENTED PROGRAMMING (รหัส 06016317)
+คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+***
+
+Faculty of Information Technology
+King Mongkut's Institute of Technology Ladkrabang
