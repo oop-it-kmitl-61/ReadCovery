@@ -51,7 +51,7 @@ public class AppAction {
 
     public void next(){
         if(newsList.size() == 0) {
-            System.out.println("news=0");
+//            System.out.println("news=0");
         }
         int randomIndex = rand.nextInt(newsList.size());
         HashMap random = newsList.get(randomIndex);

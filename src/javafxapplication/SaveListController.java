@@ -64,7 +64,7 @@ public class SaveListController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             saveBox = ApiUtil.getSaveList();
-            System.out.println(saveBox);
+//            System.out.println(saveBox);
             for (String key : saveBox.keySet()) {
                 int check = 0;
                 for (int i = 0; i < storage.getItems().size(); i++) {
