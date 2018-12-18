@@ -12,6 +12,8 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
   - [JFoenix](https://github.com/jfoenixadmin/JFoenix) เป็น Library GUI component บน JavaFX ช่วยให้การออกแบบง่ายขึ้น
   - [Json - Java](https://github.com/stleary/JSON-java) เป็น Library ที่ใช้ในการจัดการ JSON บนภาษา Java
   
+  ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Working.png)    
+
 > โดยโปรแกรมจะมี 2 ฝั่งคือ ฝั่ง Server และ Client โดยรูปแบบข้อมูลที่สื่อสารกันเป็นรูปแบบ JSON โดยฝั่ง Server จะติดต่อกับระบบฐานข้อมูล MySQL อีกต่อหนึ่ง โดย Client นั้น ใช้ JavaFX ในการพัฒนาระบบ User Interface และฝั่ง Server ใช้ Spring Boot ในการพัฒนา
  ## วิธีการใช้งาน
 
@@ -21,8 +23,15 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
    ```
    java -jar Readcovery.jar
    ```
-  เพื่อเปิดโปรแกรม
-  
+  เพื่อเปิดโปรแกรม  
+  หากเปิดโปรแกรมแล้วไม่สามารถอ่านภาษาไทยได้ ให้ไปตั้งค่าที่ Advanced system settings >> Environment Variables  
+  จากนั้นด้านล่างในส่วนของ System Variables ให้ทำการกด New จากนั้นให้ใส่คำสั่งตามภาพด้านล่าง  
+  ```
+   JAVA_TOOL_OPTIONS
+   -Dfile.encoding=UTF8
+   ```
+  ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/setting.png)  
+  จากนั้นกด OK แล้วให้ทำการเปิด cmd ใหม่ และรันโปรแกรมอีกครั้ง  
   ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Login.png)    
   เมื่อเปิดขึ้นมาแล้วจะพบกับหน้า Login หากมีบัญชีผู้ใช้แล้วสามารถใช้ Email และ Password เข้าใช้ได้ทันที  
   แต่หากยังไม่มีบัญชีให้ทำการสมัครที่ปุ่ม Register    
@@ -40,14 +49,15 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
  ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/save.png)    
 หรือหากยังไม่ต้องการอ่านทันที แต่ต้องการเก็บไว้อ่านในภายหลัง ให้กดที่ปุ่ม Save
 เพื่อเก็บเอาไว้อ่านในภายหลัง    
-*รูปเซฟลิส    
+![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/saveList.png)    
 บทความที่ถูกบันทึกไว้จะเข้าไปอยู่ใน SaveList ซึ่งสามารถเข้าถึงได้ที่ปุ่ม SaveList ด้านบน    
- ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadList.png)    
+![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadInSaveList.png)    
 หากต้องการอ่านให้คลิกที่ชื่อบทความแล้วกดที่ปุ่ม Read เพื่อทำการอ่าน    
- ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadAgain.png)    
+ ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadList.png)    
 บทความที่เคยอ่านไปแล้วทั้งหมดจะปรากฏอยู่ที่ ReadList ซึ่งอยู่ด้านบนเช่นเดียวกัน
-หากต้องการอ่านอีกครั้งให้กดที่ชื่อบทความแล้วกด Read Again    
-*รูปเปลี่ยนข้อมูล    
+![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/ReadAgain.png)    
+หากต้องการอ่านอีกครั้งให้กดที่ชื่อบทความแล้วกดปุ่ม Read Again    
+![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/edit.png)    
 สามารถเข้ามาเปลี่ยนหมวดหมู่ที่ชอบได้ที่ปุ่ม Profile ด้านบน เมื่อเปลี่ยนเสร็จแล้วให้กดที่ Save Setting  
 หรือหากต้องการออกจากระบบให้กดที่ปุ่ม Logout ด้านล่าง    
 ![](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Login.png)    
