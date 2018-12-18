@@ -73,7 +73,7 @@ public class MainController implements Initializable {
         app.next();
         nowData = app.getCurrent();
         try{
-            System.out.println(nowData.get("urlToImage"));
+//            System.out.println(nowData.get("urlToImage"));
             changeImg(nowData.get("urlToImage"));
             changeHeader(nowData.get("title"));
             System.out.println("Next");
@@ -85,7 +85,7 @@ public class MainController implements Initializable {
         if(app.previous() && prev) {
             prev = false;
             nowData = app.getCurrent();
-            System.out.println(nowData.get("urlToImage"));
+//            System.out.println(nowData.get("urlToImage"));
             changeImg(nowData.get("urlToImage"));
             changeHeader(nowData.get("title"));
             System.out.println("Previous");
@@ -94,7 +94,7 @@ public class MainController implements Initializable {
 
     @FXML void changeImg(String img){
         javafx.scene.image.Image test = new Image(img);
-        System.out.println(img);
+//        System.out.println(img);
         content.setImage(test);
     }
 
@@ -102,6 +102,7 @@ public class MainController implements Initializable {
         Header.setText(text);
     }
     @FXML void save(){
+
         app.save();
     }
     @Override
