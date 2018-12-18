@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
     @FXML private JFXButton loginBtn, toRegister;
-    @FXML private JFXTextField userTf;
+    @FXML private JFXTextField emailTf;
     @FXML private Label logErrLb;
     @FXML private JFXPasswordField passwordTf;
     private String errMsg;
@@ -32,10 +32,10 @@ public class LoginController implements Initializable {
         }
     }
     @FXML void login(ActionEvent e){
-        System.out.println(userTf.getText());
+        System.out.println(emailTf.getText());
         System.out.println(passwordTf.getText());
-        if(userTf.getText().equals("")){
-            errMsg += "Username is empty\n";
+        if(emailTf.getText().equals("")){
+            errMsg += "Email is empty\n";
         }
         if(passwordTf.getText().equals("")){
             errMsg += "Password is empty\n";

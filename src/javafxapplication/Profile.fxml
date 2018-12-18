@@ -21,12 +21,6 @@
             </Label>
             <Label text="Email" textFill="WHITE" />
             <JFXTextField fx:id="emlTf" style="-fx-text-fill: white;" unFocusColor="WHITE" />
-            <Label text="Username" textFill="WHITE">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </Label>
-            <JFXTextField fx:id="usTf" style="-fx-text-fill: white;" unFocusColor="WHITE" />
             <Label text="Password" textFill="WHITE">
                <VBox.margin>
                   <Insets top="10.0" />
