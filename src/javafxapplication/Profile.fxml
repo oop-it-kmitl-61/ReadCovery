@@ -19,7 +19,7 @@
                </font>
             </Label>
             <Label text="Name" textFill="WHITE" />
-            <JFXTextField fx:id="nameTf" style="-fx-text-fill: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="nameTf" editable="false" style="-fx-text-fill: white;" unFocusColor="WHITE" />
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Label text="Favorite" textFill="#00fcb6">
