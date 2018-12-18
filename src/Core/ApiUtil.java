@@ -92,6 +92,7 @@ public class ApiUtil {
                 data.put("title", ja.getJSONArray(i).getJSONObject(j).getString("title"));
                 data.put("url", ja.getJSONArray(i).getJSONObject(j).getString("url"));
                 data.put("urlToImage", ja.getJSONArray(i).getJSONObject(j).get("urlToImage").toString());
+                data.put("id", ja.getJSONArray(i).getJSONObject(j).get("id").toString());
                 temp.add(data);
             }
         }
@@ -198,7 +199,8 @@ public class ApiUtil {
     }
     public static void saveId(String id){
         try {
-            String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/save/"+id;
+            String tempUrl = "http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/read/save/"+id+"?token="+token;
+            System.out.println(tempUrl);
             URL myurl = new URL(url);
             con = (HttpURLConnection) myurl.openConnection();
 

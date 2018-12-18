@@ -12,6 +12,7 @@ import java.util.Random;
 * "title" => "Title of news"
 * "url" => "Website Url"
 * "urlToImage" => "urlToimg"
+* "id" => id
 * See more at method getData@ApiUtil
 * */
 
@@ -63,6 +64,7 @@ public class AppAction {
         }return false;
     }
     public void save(){
+        ApiUtil.saveId(current.get("id").toString());
         newsList.remove(current);
         saveBox.put(current.get("title").toString(), current.get("url").toString());
     }
@@ -83,4 +85,6 @@ public class AppAction {
     public HashMap getsaveBox(){
         return this.saveBox;
     }
+
+
 }
