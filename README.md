@@ -78,6 +78,7 @@ ReadCovery เป็นโปรแกรมที่ช่วยในการ
 | ![Professor](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Professor.png)
 
 รายงานนี้เป็นส่วนหนึ่งของวิชา OBJECT-ORIENTED PROGRAMMING (06016317)
+
 คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
 ***
 
