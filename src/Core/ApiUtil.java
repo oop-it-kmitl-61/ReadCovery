@@ -1,6 +1,5 @@
 package Core;
 
-import jdk.nashorn.internal.parser.Token;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -57,6 +56,29 @@ public class ApiUtil {
             con.disconnect();
         }
     }
+    public static JSONArray callJsonArray(String urll)throws MalformedURLException, ProtocolException, IOException{
+        try {
+            URL myurl = new URL(urll);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+//            System.out.println(content.toString());
+            return strToJsonArr(content.toString());
+
+        } finally {
+            con.disconnect();
+        }
+    }
     public static JSONObject callJson(String urll)throws MalformedURLException, ProtocolException, IOException{
         try {
             URL myurl = new URL(urll);
@@ -85,6 +107,11 @@ public class ApiUtil {
         JSONObject jo = new JSONObject(s);
         return jo;
     }
+    public static JSONArray strToJsonArr(String s) {
+        JSONArray jo = new JSONArray(s);
+        return jo;
+    }
+
 
     public static void setCat(String cat) {
         url = base_url + cat +"?token=" + token;
@@ -267,5 +294,19 @@ public class ApiUtil {
         JSONObject jo = callJson(url);
 //        jo.getJSONArray();
         return null;
+    }
+
+    public static String getUserCat() throws MalformedURLException, ProtocolException, IOException{
+        JSONArray ja = callJsonArray("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/category?token="+token);
+
+        String temp ="";
+        for(int i=0;i<ja.length();i++){
+            if(i==0){
+                temp = ja.get(i).toString();
+            }else{
+                temp += ","+ja.get(i).toString();
+            }
+        }
+        return temp;
     }
 }
