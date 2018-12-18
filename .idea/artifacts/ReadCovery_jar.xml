@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ReadCovery:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ReadCovery_jar</output-path>
+    <root id="archive" name="ReadCovery.jar">
+      <element id="module-output" name="ReadCovery" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/jfoenix-8.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/json-20180813.jar" path-in-jar="/" />
+      <element id="library" level="project" name="jfoenix-8.0.8" />
+      <element id="library" level="project" name="json-20180813" />
+    </root>
+  </artifact>
+</component>

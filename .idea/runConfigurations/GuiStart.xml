@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="GuiStart" type="Application" factoryName="Application" singleton="true" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="Core.GuiStart" />
+    <module name="ReadCovery" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="Core.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="ReadCovery:jar" />
+      </option>
+    </method>
+  </configuration>
+</component>

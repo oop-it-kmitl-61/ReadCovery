@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.RegisterController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Register" textFill="#a2ffa2">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Email" textFill="WHITE" />
+            <JFXTextField fx:id="regEmailTf" style="-fx-text-fill: white;" />
+            <Label text="Name" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXTextField fx:id="regNameTf" style="-fx-text-fill: white;" />
+            <Label alignment="TOP_CENTER" text="Password" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXPasswordField fx:id="regPassPf" style="-fx-text-fill: white;" />
+            <Label alignment="TOP_CENTER" text="Confirm-Password" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXPasswordField fx:id="regCpTf" style="-fx-text-fill: white;" />
+            <VBox>
+               <children>
+                  <Label text="Favorite" textFill="#00fcb6">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXCheckBox fx:id="random" checkedColor="#28ff02" text="Random" textFill="WHITE" unCheckedColor="WHITE">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="political" checkedColor="#28ff02" text="Political" textFill="WHITE" unCheckedColor="WHITE">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="sport" checkedColor="#28ff02" text="Sport" textFill="WHITE" unCheckedColor="WHITE">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="entertainment" checkedColor="#28ff02" text="Entertainment" textFill="WHITE" unCheckedColor="WHITE">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="technology" checkedColor="#28ff02" text="Technology" textFill="WHITE" unCheckedColor="WHITE">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <Label fx:id="regErrLb" textFill="RED">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets left="80.0" right="80.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <top>
+      <HBox prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="backBtn" onAction="#backHandler" prefHeight="42.0" prefWidth="66.0" style="-fx-background-color: #00fcb6;" text="Back" textFill="#393939">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <JFXButton fx:id="registBtn" onAction="#registerHandler" prefHeight="26.0" prefWidth="290.0" style="-fx-background-color: #00fcb6;" text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="30.0" top="20.0" />
+         </BorderPane.margin>
+      </JFXButton>
+   </bottom>
+</BorderPane>
