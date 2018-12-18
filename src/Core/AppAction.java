@@ -50,14 +50,16 @@ public class AppAction {
     }
 
     public void next(){
-        if(newsList.size() == 0) {
+        if(newsList == null) {
 //            System.out.println("news=0");
+        }else {
+            System.out.println(newsList.toString());
+            int randomIndex = rand.nextInt(newsList.size());
+            HashMap random = newsList.get(randomIndex);
+            prevStack.add(current);
+            this.current = random;
+            newsList.remove(randomIndex);
         }
-        int randomIndex = rand.nextInt(newsList.size());
-        HashMap random = newsList.get(randomIndex);
-        prevStack.add(current);
-        this.current = random;
-        newsList.remove(randomIndex);
     }
     public boolean previous(){
         if(prevStack.size() > 0){
