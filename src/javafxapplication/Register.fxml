@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.RegisterController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #26173d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.RegisterController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -28,6 +28,12 @@
             </Label>
             <Label text="Email" textFill="WHITE" />
             <JFXTextField fx:id="regEmailTf" style="-fx-text-fill: white;" />
+            <Label text="Name" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXTextField fx:id="regNameTf" style="-fx-text-fill: white;" />
             <Label alignment="TOP_CENTER" text="Password" textFill="WHITE">
                <VBox.margin>
                   <Insets top="20.0" />
@@ -39,10 +45,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-            <JFXPasswordField fx:id="regCpTf" style="-fx-text-fill: white;">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></JFXPasswordField>
+            <JFXPasswordField fx:id="regCpTf" style="-fx-text-fill: white;" />
             <VBox>
                <children>
                   <Label text="Favorite" textFill="#00fcb6">
@@ -77,12 +80,15 @@
                   </JFXCheckBox>
                </children>
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets />
                </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </VBox>
             <Label fx:id="regErrLb" textFill="RED">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="30.0" />
                </VBox.margin>
             </Label>
          </children>

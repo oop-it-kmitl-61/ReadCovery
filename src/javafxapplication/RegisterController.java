@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
     @FXML private JFXButton registBtn, backBtn;
-    @FXML private JFXTextField regEmailTf;
+    @FXML private JFXTextField regEmailTf, regNameTf;
     @FXML private JFXPasswordField regPassPf,regCpTf;
     @FXML private Label regErrLb;
     @FXML private JFXCheckBox random, political, sport, entertainment, technology;
@@ -55,6 +55,9 @@ public class RegisterController implements Initializable {
 //        System.out.println("Confirm-Pass:"+regCpTf.getText());
         if(regEmailTf.getText().equals("")){
             errMsg += "Email is empty.\n";
+        }
+        if(regNameTf.getText().equals("")){
+            errMsg += "Name is empty.\n";
         }
         if(regPassPf.getText().equals("") || regCpTf.getText().equals("")){
             errMsg += "Password or Confirm-Password is empty.\n";
