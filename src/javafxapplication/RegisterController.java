@@ -1,5 +1,6 @@
 package javafxapplication;
 
+import Core.ApiUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -73,7 +74,7 @@ public class RegisterController implements Initializable {
             regErrLb.setText("Register Success!");
             errMsg="";
             String cat = "";
-            System.out.print("Favorite : ");
+
             if (random.isSelected()) {
                 cat = catAppend(cat,random.getText());
             }
@@ -91,7 +92,7 @@ public class RegisterController implements Initializable {
             if (technology.isSelected()) {
                 cat = catAppend(cat,technology.getText());
             }
-            System.out.println(cat);
+//            System.out.println(cat);
         }else{
             regErrLb.setTextFill(Color.RED);
             regErrLb.setText(errMsg);

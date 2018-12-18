@@ -23,6 +23,7 @@ public class ApiUtil {
     private static String base_url = "https://newsapi.org/v2/top-headlines?country=us&category=";
     private static String url = base_url + cat + API;
     private static HttpURLConnection con;
+    private static String token = "";
     private static StringBuilder content;
 
     public ApiUtil() {
@@ -122,20 +123,26 @@ public class ApiUtil {
         conn.setDoOutput(true);
         conn.getOutputStream().write(postDataBytes);
 
-        Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-        StringBuilder data = new StringBuilder();
-        for (int c; (c = in.read()) >= 0; ) {
-            data.append((char) c);
-        }
-        String intentData = data.toString();
-        JSONObject jo = new JSONObject(intentData);
-        String token = jo.getString("token");
+        Reader in;
+        try {
+            in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+            StringBuilder data = new StringBuilder();
+            for (int c; (c = in.read()) >= 0; ) {
+                data.append((char) c);
+            }
+            String intentData = data.toString();
+            JSONObject jo = new JSONObject(intentData);
+            String token = jo.getString("token");
 //        System.out.println(token);
-        if (conn.getResponseCode() == 200) {
-            return token;
-        }else {
+            if (conn.getResponseCode() == 200) {
+                return token;
+            }else {
+                return null;
+            }
+        }catch (Exception ex){
             return null;
         }
+
     }
     public static boolean regisRequest(String email, String name, String password, String cat) throws IOException {
 
@@ -174,5 +181,13 @@ public class ApiUtil {
         }else {
             return false;
         }
+    }
+
+    public static void setToken(String e) {
+        token=e;
+    }
+
+    public static String getToken() {
+        return token;
     }
 }

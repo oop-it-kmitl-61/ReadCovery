@@ -1,5 +1,6 @@
 package javafxapplication;
 
+import Core.ApiUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -32,14 +33,26 @@ public class LoginController implements Initializable {
         }
     }
     @FXML void login(ActionEvent e){
-        System.out.println(emailTf.getText());
-        System.out.println(passwordTf.getText());
+//        System.out.println(emailTf.getText());
+//        System.out.println(passwordTf.getText());
         if(emailTf.getText().equals("")){
             errMsg += "Email is empty\n";
         }
         if(passwordTf.getText().equals("")){
             errMsg += "Password is empty\n";
         }
+        try {
+            String token = ApiUtil.loginRequest(emailTf.getText(), passwordTf.getText());
+            if (token == null) {
+                errMsg += "Email or Password are incorrect";
+            }else{
+                ApiUtil.setToken(token);
+                System.out.println(ApiUtil.getToken());
+            }
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+
         if(errMsg.equals("")){
             changeScene((Stage) loginBtn.getScene().getWindow(), "MainPage.fxml");
         }
