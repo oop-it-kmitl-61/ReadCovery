@@ -48,7 +48,7 @@
 
 [JSON-JAVA]: https://github.com/stleary/JSON-java	"JSON-JAVA"
 
-​	เป็น Library ที่ใช้ในการจัดการ Json บนภาษา Java
+​	เป็น Library ที่ใช้ในการจัดการ JSON บนภาษา Java
 
 [JFoenix]: https://github.com/jfoenixadmin/JFoenix	"JFoenix"
 

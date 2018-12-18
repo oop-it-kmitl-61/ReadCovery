@@ -1,5 +1,6 @@
 package Core;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.json.*;
 
 import java.util.ArrayList;
@@ -21,25 +22,34 @@ public class Main {
 //        for(int i=0;i<articles.length();i++){
 //            System.out.println(articles.getJSONObject(i).getString("title"));
 //        }
-        String[] select = new String[2];
-        select[0] = "business";
-        select[1] = "science";
-        JSONArray data = api.getSelectedArticles(select);
-//        ArrayList<String> titles = api.getArticleTitle(data);
-        ArrayList<HashMap> apiData = api.getData(data);
-        AppAction app = AppAction.getInstance();
-        app.setNewsList(apiData);
+//        String[] select = new String[2];
+//        select[0] = "business";
+//        select[1] = "science";
+//        JSONArray data = api.getSelectedArticles(select);
+////        ArrayList<String> titles = api.getArticleTitle(data);
+//        ArrayList<HashMap> apiData = api.getData(data);
+//        AppAction app = AppAction.getInstance();
+//        app.setNewsList(apiData);
+//
+//        System.out.println(app.getCurrent());
+//        app.next();
+//        System.out.println(app.getCurrent());
+//        app.previous();
+//        System.out.println(app.getCurrent());
+//        app.save();
+//
+//        app.next();
+//        System.out.println(app.getCurrent());
+//        app.save();
+//        System.out.println(app.getsaveBox());
 
-        System.out.println(app.getCurrent());
-        app.next();
-        System.out.println(app.getCurrent());
-        app.previous();
-        System.out.println(app.getCurrent());
-        app.save();
 
-        app.next();
-        System.out.println(app.getCurrent());
-        app.save();
-        System.out.println(app.getsaveBox());
+
+//        String[] a = new String[10];
+//        a[0]="Business";
+//        Boolean res = ApiUtil.regisRequest("sss","eieie","123",a);
+
+            String res = ApiUtil.loginRequest("sss", "123");
+            System.out.println(res);
     }
 }

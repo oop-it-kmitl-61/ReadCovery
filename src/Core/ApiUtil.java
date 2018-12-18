@@ -2,32 +2,35 @@ package Core;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.CDL;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
-import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.net.URLEncoder;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class ApiUtil {
-    private static String API = "&apiKey="+"3249e937bdde4f27bc283ab7219b1142";
+    //http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/article/category/political
+
+    private static String API = "&apiKey=" + "3249e937bdde4f27bc283ab7219b1142";
     private static String cat = "business";
     private static String base_url = "https://newsapi.org/v2/top-headlines?country=us&category=";
-    private static String url = base_url+cat+API;
+    private static String url = base_url + cat + API;
     private static HttpURLConnection con;
     private static StringBuilder content;
 
-    public ApiUtil(){
+    public ApiUtil() {
 
     }
 
 
-    public static JSONObject callAPI()throws MalformedURLException, ProtocolException, IOException {
+    public static JSONObject callAPI() throws MalformedURLException, ProtocolException, IOException {
         try {
 
             URL myurl = new URL(url);
@@ -47,35 +50,37 @@ public class ApiUtil {
 //            System.out.println(content.toString());
             return strToJson(content.toString());
 
-        }finally {
+        } finally {
             con.disconnect();
         }
 
 
     }
-    public static JSONObject strToJson(String s){
+
+    public static JSONObject strToJson(String s) {
         JSONObject jo = new JSONObject(s);
         return jo;
     }
 
-    public static void setCat(String cat){
+    public static void setCat(String cat) {
         cat = cat;
-        url = base_url+cat+API;
+        url = base_url + cat + API;
     }
 
-    public static JSONArray getSelectedArticles(String[] cats) throws Exception{
+    public static JSONArray getSelectedArticles(String[] cats) throws Exception {
         JSONArray artPool = new JSONArray();
-        for(int i =0;i< cats.length;i++){
+        for (int i = 0; i < cats.length; i++) {
             cat = cats[i];
             artPool.put(callAPI().getJSONArray("articles"));
         }
         return artPool;
     }
-    public static ArrayList<HashMap> getData(JSONArray ja){
+
+    public static ArrayList<HashMap> getData(JSONArray ja) {
         ArrayList<HashMap> temp = new ArrayList<>();
 
-        for(int i=0;i<ja.length();i++){
-            for(int j = 0;j<ja.getJSONArray(i).length();j++){
+        for (int i = 0; i < ja.length(); i++) {
+            for (int j = 0; j < ja.getJSONArray(i).length(); j++) {
                 HashMap<String, String> data = new HashMap<>();
                 data.put("title", ja.getJSONArray(i).getJSONObject(j).getString("title"));
                 data.put("url", ja.getJSONArray(i).getJSONObject(j).getString("url"));
@@ -85,15 +90,89 @@ public class ApiUtil {
         }
         return temp;
     }
-    public static ArrayList<String> getArticleTitle(JSONArray ja){
+
+    public static ArrayList<String> getArticleTitle(JSONArray ja) {
         ArrayList<String> temp = new ArrayList<>();
 
-        for(int i=0;i<ja.length();i++){
-            for(int j = 0;j<ja.getJSONArray(i).length();j++){
+        for (int i = 0; i < ja.length(); i++) {
+            for (int j = 0; j < ja.getJSONArray(i).length(); j++) {
                 temp.add(ja.getJSONArray(i).getJSONObject(j).getString("title"));
 //                System.out.println(ja.getJSONArray(i).getJSONObject(j).getString("title"));
             }
         }
         return temp;
+    }
+    public static String loginRequest(String email, String password) throws IOException{
+        URL url = new URL("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/auth");
+        Map<String, Object> params = new LinkedHashMap<>();
+        params.put("email", email);
+        params.put("password", password);
+        StringBuilder postData = new StringBuilder();
+        for (Map.Entry<String, Object> param : params.entrySet()) {
+            if (postData.length() != 0) postData.append('&');
+            postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+            postData.append('=');
+            postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
+        }
+        byte[] postDataBytes = postData.toString().getBytes("UTF-8");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+        conn.setDoOutput(true);
+        conn.getOutputStream().write(postDataBytes);
+
+        Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+        StringBuilder data = new StringBuilder();
+        for (int c; (c = in.read()) >= 0; ) {
+            data.append((char) c);
+        }
+        String intentData = data.toString();
+        JSONObject jo = new JSONObject(intentData);
+        String token = jo.getString("token");
+//        System.out.println(token);
+        if (conn.getResponseCode() == 200) {
+            return token;
+        }else {
+            return null;
+        }
+    }
+    public static boolean regisRequest(String email, String name, String password, String cat[]) throws IOException {
+
+//        String payload = "name="+name+"&email="+email+"&password"+password+"&interested_category"+cat[0];
+        URL url = new URL("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/create");
+        Map<String, Object> params = new LinkedHashMap<>();
+        params.put("email", email);
+        params.put("name", name);
+        params.put("password", password);
+        params.put("interested_category", cat[0]);
+        StringBuilder postData = new StringBuilder();
+        for (Map.Entry<String, Object> param : params.entrySet()) {
+            if (postData.length() != 0) postData.append('&');
+            postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+            postData.append('=');
+            postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
+        }
+        byte[] postDataBytes = postData.toString().getBytes("UTF-8");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+        conn.setDoOutput(true);
+        conn.getOutputStream().write(postDataBytes);
+
+        Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+        StringBuilder data = new StringBuilder();
+        for (int c; (c = in.read()) >= 0; ) {
+            data.append((char) c);
+        }
+        String intentData = data.toString();
+
+//        System.out.println(intentData);
+        if (conn.getResponseCode() == 200) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
