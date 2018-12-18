@@ -36,7 +36,7 @@ public class ReadListController implements Initializable {
     }
     @FXML void ReadInList(){
         try{
-            readBox = app.getreadBox();
+            readBox = ApiUtil.getReadList();
             String selected = history.getSelectionModel().getSelectedItem().toString();
             Desktop d = Desktop.getDesktop();
             String url = readBox.get(selected);

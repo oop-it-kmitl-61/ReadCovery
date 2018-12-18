@@ -105,7 +105,6 @@ public class MainController implements Initializable {
         Header.setText(text);
     }
     @FXML void save(){
-
         app.save();
     }
     @Override

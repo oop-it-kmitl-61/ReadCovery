@@ -35,7 +35,6 @@ public class SaveListController implements Initializable {
     }
     @FXML void ReadInList(){
         try{
-//            saveBox = app.getsaveBox();
             saveBox = ApiUtil.getSaveList();
             String selected = storage.getSelectionModel().getSelectedItem().toString();
             Desktop d = Desktop.getDesktop();
@@ -61,18 +60,8 @@ public class SaveListController implements Initializable {
     @FXML void toMain(ActionEvent e){
         changeScene((Stage)backBtn.getScene().getWindow(), "MainPage.fxml");
     }
-    @FXML void delete(){
-        try{
-            saveBox = app.getsaveBox();
-            String selected = storage.getSelectionModel().getSelectedItem().toString();
-            storage.getItems().remove(selected);
-            saveBox.remove(selected);
-        }catch(Exception e){
-            return ;
-        }
-    }
+
     public void initialize(URL location, ResourceBundle resources) {
-//        saveBox = app.getsaveBox();
         try {
             saveBox = ApiUtil.getSaveList();
             System.out.println(saveBox);
