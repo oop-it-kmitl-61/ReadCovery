@@ -137,7 +137,7 @@ public class ApiUtil {
             return null;
         }
     }
-    public static boolean regisRequest(String email, String name, String password, String cat[]) throws IOException {
+    public static boolean regisRequest(String email, String name, String password, String cat) throws IOException {
 
 //        String payload = "name="+name+"&email="+email+"&password"+password+"&interested_category"+cat[0];
         URL url = new URL("http://ec2-3-0-97-144.ap-southeast-1.compute.amazonaws.com:8080/user/create");
@@ -145,7 +145,7 @@ public class ApiUtil {
         params.put("email", email);
         params.put("name", name);
         params.put("password", password);
-        params.put("interested_category", cat[0]);
+        params.put("interested_category", cat);
         StringBuilder postData = new StringBuilder();
         for (Map.Entry<String, Object> param : params.entrySet()) {
             if (postData.length() != 0) postData.append('&');

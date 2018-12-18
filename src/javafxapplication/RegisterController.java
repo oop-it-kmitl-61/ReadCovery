@@ -39,6 +39,15 @@ public class RegisterController implements Initializable {
         Stage stage = (Stage) backBtn.getScene().getWindow();
         changeScene(stage, "Loginjfoenix.fxml");
     }
+
+    private static String catAppend(String catString,String addCat ){
+        if(catString.equals("")){
+            catString = addCat;
+        } else{
+            catString += ","+addCat;
+        }
+        return catString;
+    }
     @FXML void registerHandler(ActionEvent event){
 //        System.out.println("Email:" +regEmailTf.getText());
 //        System.out.println("User:"+regUserTf.getText());
@@ -63,23 +72,26 @@ public class RegisterController implements Initializable {
             regErrLb.setTextFill(Color.GREEN);
             regErrLb.setText("Register Success!");
             errMsg="";
+            String cat = "";
             System.out.print("Favorite : ");
             if (random.isSelected()) {
-                System.out.print(random.getText() + " ");
+                cat = catAppend(cat,random.getText());
             }
             if (political.isSelected()) {
-                System.out.print(political.getText() + " ");
+//                System.out.print(political.getText() + " ");
+                cat = catAppend(cat,political.getText());
             }
             if (sport.isSelected()) {
-                System.out.print(sport.getText() + " ");
+                cat = catAppend(cat,sport.getText());
             }
             if (entertainment.isSelected()) {
-                System.out.print(entertainment.getText() + " ");
+                cat = catAppend(cat,entertainment.getText());
+
             }
             if (technology.isSelected()) {
-                System.out.print(technology.getText() + " ");
+                cat = catAppend(cat,technology.getText());
             }
-            System.out.println(" ");
+            System.out.println(cat);
         }else{
             regErrLb.setTextFill(Color.RED);
             regErrLb.setText(errMsg);
